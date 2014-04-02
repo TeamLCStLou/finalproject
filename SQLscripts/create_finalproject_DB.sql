@@ -1,10 +1,5 @@
 --
--- Database: `pset7`
+-- Database: `matchCode`
 --
 
-CREATE DATABASE IF NOT EXISTS  `pset7`;
-
-
---
--- Table structure for table `users`
---
+CREATE DATABASE IF NOT EXISTS  `matchCode`;
