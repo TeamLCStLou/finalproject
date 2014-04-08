@@ -16,4 +16,4 @@ case $1 in
 esac
 
 echo Adding $2 to $filename
-echo $2 >> $HOME/vhosts/finalproject/$filename
+echo $2 >> $HOME/vhosts/finalproject/tools/$filename
