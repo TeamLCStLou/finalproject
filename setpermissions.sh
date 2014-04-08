@@ -13,7 +13,7 @@ chmod 700 $HOME/vhosts/finalproject/*.sh
 # any php file
 #chmod 600 
 echo "*** PHP files: chmod 600:"
-cat $HOME/vhosts/finalproject/php-file-list | while read line
+cat $HOME/vhosts/finalproject/tools/php-file-list | while read line
 do
 echo $line
 chmod 600 $HOME/$line
@@ -23,7 +23,7 @@ done
 # any non-php file
 #chmod 644 
 echo "*** non-PHP files: chmod 644:"
-cat $HOME/vhosts/finalproject/notphp-file-list | while read line
+cat $HOME/vhosts/finalproject/tools/notphp-file-list | while read line
 do
 echo $line
 chmod 644 $HOME/$line
@@ -33,7 +33,7 @@ done
 # any directory
 #chmod 711 directory
 echo "*** Directories: chmod 711:"
-cat $HOME/vhosts/finalproject/dir-list | while read line
+cat $HOME/vhosts/finalproject/tools/dir-list | while read line
 do
 echo $line
 chmod 711 $HOME/$line
