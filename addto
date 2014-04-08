@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo Usage "addto [php | not php | dir] [file or directory]"
+
+case $1 in
+    "php")
+        filename="php-file-list"
+        ;;
+    "notphp")
+        filename="notphp-file-list"
+        ;;
+    "dir")
+        filename="dir-list"
+        ;;
+    *) echo invalid option;;
+esac
+
+echo Adding $2 to $filename
+echo $2 >> $HOME/vhosts/finalproject/$filename
