@@ -1,0 +1,47 @@
+/**
+ *  CSS Stylesheet for MyLaunchcode.com
+ */
+ 
+ h1
+ {
+    background: rgba(255,0,0,1.0);
+    height: 100px;
+ }
+ 
+ #top
+ {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+ }
+ 
+ IMG.imgcenter
+ {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }
+ 
+ h2
+ {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }
+ 
+ #middle
+ {
+    text-align: center;
+    font: Helvetica;
+ }
+ 
+ 
+ #bottom
+ {
+    text-align: center;
+    font-size: smaller;
+    color: gray;
+    font-style:  bold;
+ }
+ 
