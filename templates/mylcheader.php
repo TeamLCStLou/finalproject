@@ -13,7 +13,7 @@
         <div>
 
             <div id="top">
-                <a href="/"><img alt="MyLaunchcode.com" src="~/vhosts/finalproject/includes.png"/></a>
+                <img alt="MyLaunchcode.com" src="~/vhosts/finalproject/includes/mylclogo.png"/>
             </div>
 
             <div id="middle">

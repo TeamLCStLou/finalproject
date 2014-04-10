@@ -21,7 +21,7 @@
     <div>
 
             <div id="top">
-                <a href="/"><IMG class="imgcenter" alt="MyLaunchcode.com" src="images/MyLClogo.png"/></a>
+                <IMG class="imgcenter" alt="MyLaunchcode.com" src="images/MyLClogo.png"/></a>
             </div>
 
         
