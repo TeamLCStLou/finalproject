@@ -26,7 +26,8 @@
 
         
         <h2>Login</h2>
-        <h3>--or click here to register--</h3>
+        <body link= "orange">
+        <h3>--or click <a href="mylcregister.php">here</a> to register--</h3>
         
         <form action = "mylclogin.php" method="post">
             
