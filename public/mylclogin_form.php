@@ -9,6 +9,9 @@
     <title>MyLaunchCode.com</title>
     
     </head>
+    </br>
+    </br>
+    </br>
     
     <h1>
     </h1>
@@ -23,6 +26,7 @@
 
         
         <h2>Login</h2>
+        <h3>--or click here to register--</h3>
         
         <form action = "mylclogin.php" method="post">
             
@@ -42,6 +46,8 @@
             
             </div>
             
+            </br>
+            
             <div>
             
             <div id="middle">
@@ -56,7 +62,7 @@
         </br>
         
         <div>
-        <div id= "bottom">"The hard is what makes it great." --Jimmy Dugan
+        <div id= "bottom">The hard is what makes it great. --Jimmy Dugan
         </div>
     
     </body>
