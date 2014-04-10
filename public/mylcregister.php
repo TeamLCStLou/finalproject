@@ -19,7 +19,7 @@
     </fieldset>
 </form>
 <div>
-    or <a href="mylclogin.php">log in</a>
+    or <a href="mylclogin_form.php">log in</a>
 </div>
 
 
