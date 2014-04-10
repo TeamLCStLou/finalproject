@@ -10,6 +10,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $Experience = ($_POST["Experience"]);
     $Availability = ($_POST["Availability[]"]);
     $Lecture = ($_POST["Lecture Location"]);
+}
 ?>
 
 <!DOCTYPE html>
@@ -22,17 +23,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     <p>
     <p>
 		<div class="content">
-		<form method="post">
+		<form method="post"action="finalproject/">
 		 <h3>Contact info:</h3>
 		 <p>
 		 <h3>Phone Number:</h3>
 		 <p>
 		 
-		 <input name="Phone number" type="text" placeholder="(XXX)-XXX-XXXX">
+		 <input name="Phone number" type="text" placeholder="(XXX)-XXX-XXXX"></input>
 		 <p>
 		 <h3>E-mail:</h3>
 		 <p>
-		 <input name="E-mail address" type="text" placeholder="Name@name.com">
+		 <input name="E-mail address" type="text" placeholder="Name@name.com"></input>
 		 <p>
 		 
 		 <h3>Choose your preferred location:</h3>
@@ -56,15 +57,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 		 </select>
 		 <p>
 		 <h3>Choose your availability:</h3>
-		 <input type="checkbox" name="Availability[]" id="Availability" value="Morning"></input> 
-		 <input type="checkbox" name="Availability[]" id="Availability" value="Afternoon"></input> 
-		 <input type="checkbox" name="Availability[]" id="Availability" value="Evening"></input>
-		 <input type="checkbox" name="Availability[]" id="Availability" value="Weekday"></input>
-		 <input type="checkbox" name="Availability[]" id="Availability" value="Weekend"></input>
+		 <input type="checkbox" name="Availability[]" id="Availability" value="Morning">Morning</input> 
+		 <input type="checkbox" name="Availability[]" id="Availability" value="Afternoon">Afternoon</input> 
+		 <input type="checkbox" name="Availability[]" id="Availability" value="Evening">Evening</input>
+		 <input type="checkbox" name="Availability[]" id="Availability" value="Weekday">Weekday</input>
+		 <input type="checkbox" name="Availability[]" id="Availability" value="Weekend">Weekend</input>
 		 <p>
 		 <h3>Choose your lecture location preference:</h3>
-		 <input type="radio" name="Lecture Location" value="Soldier's Memorial">Soldier's Memorial<br>
-		 <input type="radio" name="Lecture Location" value="Central Library">Central Library<br>
+		 <input type="radio" name="Lecture Location" value="Soldier's Memorial">Soldier's Memorial<br></input>
+		 <input type="radio" name="Lecture Location" value="Central Library">Central Library<br></input>
 		 <p>
 		 <p>
 		 <button type="submit" class="m-btn">Save Changes</button>

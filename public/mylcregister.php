@@ -1,7 +1,7 @@
 <h1><u>My LaunchCode!</u></h1>
 <P>
 <P>
-<form action="mylcregister.php" method="post">
+<form action="profileEditForm.php" method="post">
     <fieldset>
         <div class="form-group">
             <input autofocus class="form-control" name="username" placeholder="Username"  type="text" align="center"/>
@@ -13,7 +13,7 @@
         </div>
         </div>
         <div class="form-group">
-            <button type="submit" class="m-btn">Log In</button>
+            <button type="submit" class="m-btn">Register</button>
         </div>
        
     </fieldset>
