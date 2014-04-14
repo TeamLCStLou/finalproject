@@ -1,7 +1,10 @@
 <?php
 
 require("../includes/MyLCconfig.php");
-
+if(!isset($_SESSION["id"]))
+{
+    die("You must be logged in to view this page");
+}
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     $PhoneNum = ($_POST["Phone number"]);
