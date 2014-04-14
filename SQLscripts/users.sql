@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 29, 2014 at 01:35 AM
+-- Generation Time: Apr 14, 2014 at 07:27 PM
 -- Server version: 5.5.32-MariaDB
 -- PHP Version: 5.5.3
 
@@ -40,6 +40,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `City_Loc` int(5) DEFAULT NULL,
   `Group_ID` int(5) DEFAULT NULL,
   `ProgExp_ID` int(5) DEFAULT NULL,
+  `Available` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_on` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
@@ -50,11 +51,11 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `usertype`, `FName`, `LName`, `Email`, `Phone`, `Lecture_Loc`, `City_Loc`, `Group_ID`, `ProgExp_ID`, `created_on`) VALUES
-(1, 'ssmith', '12345', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2014-03-29 05:12:38.000000'),
-(2, 'Erik', '12345', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2014-03-29 05:34:10.000000'),
-(3, 'Erin', '12345', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2014-03-29 05:34:10.000000'),
-(4, 'Steve', '12345', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2014-03-29 05:34:27.000000');
+INSERT INTO `users` (`id`, `username`, `password`, `usertype`, `FName`, `LName`, `Email`, `Phone`, `Lecture_Loc`, `City_Loc`, `Group_ID`, `ProgExp_ID`, `Available`, `created_on`) VALUES
+(1, 'ssmith', '12345', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2014-03-29 05:12:38.000000'),
+(2, 'Erik', '12345', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2014-03-29 05:34:10.000000'),
+(3, 'Erin', '12345', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2014-03-29 05:34:10.000000'),
+(4, 'Steve', '12345', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2014-03-29 05:34:27.000000');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
