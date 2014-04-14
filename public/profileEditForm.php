@@ -13,6 +13,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $Experience = ($_POST["Experience"]);
     $Availability = ($_POST["Availability[]"]);
     $Lecture = ($_POST["Lecture Location"]);
+    
+    $result = query("INSERT INTO users (Phone number, E-mail address, Location, Experience, Lecture location)
+    VALUES (?, ?, ?, ?, ?, )", $_POST["Phone number"], $_POST["E-mail address"], $_POST["Location"], $_POST["Experience"],
+    $_POST["Lecture location"]);
+    foreach($_POST["Availability"] as $value)
+    {
+        $result = query("INSERT INTO users (Availability) VALUES ($value)");
+    }
 }
 ?>
 
@@ -26,7 +34,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     <p>
     <p>
 		<div class="content">
-		<form method="post"action="finalproject/">
+		<form method="post">
 		 <h3>Contact info:</h3>
 		 <p>
 		 <h3>Phone Number:</h3>
@@ -68,7 +76,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 		 <p>
 		 <h3>Choose your lecture location preference:</h3>
 		 <input type="radio" name="Lecture Location" value="Soldier's Memorial">Soldier's Memorial<br></input>
-		 <input type="radio" name="Lecture Location" value="Central Library">Central Library<br></input>
+		 <input type="radio" name="Lecture location" value="Central Library">Central Library<br></input>
 		 <p>
 		 <p>
 		 <button type="submit" class="m-btn">Save Changes</button>
