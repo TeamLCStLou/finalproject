@@ -1,7 +1,7 @@
 <h1><u>My LaunchCode!</u></h1>
 <P>
 <P>
-<form action="profileEditForm.php" method="post">
+<form method="post">
     <fieldset>
         <div class="form-group">
             <input autofocus class="form-control" name="username" placeholder="Username"  type="text" align="center"/>
