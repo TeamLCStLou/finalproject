@@ -11,12 +11,12 @@
     </head>
     </br>
     
-    <h1>
-    </h1>
+    <fieldset class="bar">
+    </fieldset>
     
     <body background="images/bckgnd.png">
     
-    <fieldset>
+    <fieldset class="form">
     </br>
     <div>
 
@@ -46,8 +46,8 @@
 </fieldset>
 </body>
 
-<h1>
-</h1>
+<fieldset class="bar">
+</fieldset>
 
 <html>
 
