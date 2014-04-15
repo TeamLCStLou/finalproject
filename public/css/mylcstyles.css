@@ -2,7 +2,18 @@
  *  CSS Stylesheet for MyLaunchcode.com
  */
  
-fieldset
+fieldset.bar
+{
+    border-style: 1px solid;
+    border-color: red;
+    max-width: 49%;
+    height: auto;
+    background-color: red;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+fieldset.form
 {
     border-style: 1px solid;
     border-color: white;
@@ -49,7 +60,7 @@ IMG.imgcenter
  {
     text-align: center;
     font: Helvetica;
-    font-size: 1.8vh;
+    font-size: 0.8vw;
     color: gray;
     max-width: 100%;
     height: auto;
@@ -80,7 +91,7 @@ IMG.imgcenter
     max-width: 50%;
     height: auto;
     text-align: center;
-    font-size: 2.5vh;
+    font-size: 1.0vmax;
     color: gray;
     border-top: 3px solid black;
     border-bottom: 3px solid black;
