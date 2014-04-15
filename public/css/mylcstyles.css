@@ -49,6 +49,7 @@ IMG.imgcenter
  {
     text-align: center;
     font: Helvetica;
+    font-size: 1.5vw;
     display: block;
     margin-left: auto;
     margin-right: auto;
