@@ -11,10 +11,12 @@
     </head>
     </br>
     
-    <fieldset>
     <h1>
     </h1>
-    </fieldset>
+    <h1>
+    </h1>
+    <h1>
+    </h1>
     
     <body background="images/bckgnd.png">
     
@@ -71,9 +73,11 @@
     </fieldset>
     </body>
     
-    <fieldset>
     <h1>
     </h1>
-    </fieldset>
+    <h1>
+    </h1>
+    <h1>
+    </h1>
 
 <html>

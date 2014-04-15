@@ -6,7 +6,7 @@ fieldset
 {
     border-style: 1px solid;
     border-color: white;
-    width: 49%;
+    max-width: 49%;
     height: auto;
     background-color: white;
     margin-left: auto;
@@ -27,8 +27,8 @@ IMG.imgcenter
     margin-left: auto;
     margin-right: auto;
     background: rgba(240,0,0,1.0);
-    height: 100px;
-    width: 100%;
+    max-width: 50%;
+    height: auto;
     border: 5px solid rgba(200,0,0,1.0);
  }
  
@@ -67,7 +67,8 @@ IMG.imgcenter
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 500px;
+    max-width: 50%;
+    height: auto;
     text-align: center;
     font-size: 16pt;
     color: gray;
