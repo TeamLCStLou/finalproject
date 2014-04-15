@@ -23,10 +23,8 @@
                 <IMG class="imgcenter" alt="MyLaunchcode.com" src="images/MyLClogo.png"/></a>
             </div>
 
-        
-        <h2>Login</h2>
         <body link= "orange">
-        <h3>--or click <a href="mylcregister.php">here</a> to register--</h3>
+        
         
         <form action = "mylclogin.php" method="post">
             
@@ -57,6 +55,8 @@
             </div>
         
         </form>
+        
+        <h3>--or click <a href="mylcregister.php">here</a> to register--</h3>
         
         </br>
         </br>
