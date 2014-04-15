@@ -16,6 +16,8 @@ fieldset
 
 IMG.imgcenter
  {
+    max-width: 100%;
+    height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -45,7 +47,7 @@ IMG.imgcenter
  {
     text-align: center;
     font: Helvetica;
-    font-size: 12pt;
+    font-size: 1.8vh;
     color: gray;
  }
  
@@ -70,7 +72,7 @@ IMG.imgcenter
     max-width: 50%;
     height: auto;
     text-align: center;
-    font-size: 16pt;
+    font-size: 2.5vh;
     color: gray;
     border-top: 3px solid black;
     border-bottom: 3px solid black;
