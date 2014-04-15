@@ -1,27 +1,57 @@
-<h1><u>My LaunchCode!</u></h1>
-<P>
-<P>
-<form method="post">
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+    
+    <link href= "css/mylcstyles.css" rel= "stylesheet"/>
+    
+    <title>MyLaunchCode.com</title>
+    
+    </head>
+    </br>
+    </br>
+    </br>
+    
+    <h1>
+    </h1>
+    
+    <body background="images/bckgnd.png">
+    
     <fieldset>
-        <div class="form-group">
+    </br>
+    <div>
+
+            <div id="top">
+                <IMG class="imgcenter" alt="MyLaunchcode.com" src="images/MyLClogo.png"/></a>
+            </div>
+
+<form method="post">
+        <div class="form-group" id="middle">
             <input autofocus class="form-control" name="username" placeholder="Username"  type="text" align="center"/>
         </div>
-        <div class="form-group">
+        <div class="form-group" id="middle">
             <input class="form-control" name="password" placeholder="Password" type="password" align="center"/>
-        <div class="form-group">
+        <div class="form-group" id="middle">
         <input class="form-control" name="confirmation" placeholder="Confirm Password" type="password" align="center"/>
         </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" id="middle">
             <button type="submit" class="m-btn">Register</button>
         </div>
        
-    </fieldset>
-</form>
-<div>
-    or <a href="mylclogin_form.php">log in</a>
-</div>
+    </form>
 
+<h3>or <a href="mylclogin_form.php">log in</a></h3>
+</div>
+</br>
+</fieldset>
+</body>
+
+<h1>
+</h1>
+
+<html>
 
 
 

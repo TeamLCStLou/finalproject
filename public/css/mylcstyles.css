@@ -2,6 +2,17 @@
  *  CSS Stylesheet for MyLaunchcode.com
  */
  
+fieldset
+{
+    border-style: 1px solid;
+    border-color: white;
+    width: 680px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 IMG.imgcenter
  {
     display: block;

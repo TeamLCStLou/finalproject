@@ -16,8 +16,10 @@
     <h1>
     </h1>
     
-    <body>
+    <body background="images/bckgnd.png">
     
+    <fieldset>
+    </br>
     <div>
 
             <div id="top">
@@ -65,7 +67,8 @@
         <div>
         <div id= "bottom">The hard is what makes it great. --Jimmy Dugan
         </div>
-    
+        </br>
+    </fieldset>
     </body>
     
     <h1>
