@@ -7,19 +7,24 @@ if(!isset($_SESSION["id"]))
 }
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
-    $PhoneNum = ($_POST["Phone number"]);
-    $Email = ($_POST["E-mail address"]);
-    $Location = ($_POST["Location"]);
-    $Experience = ($_POST["Experience"]);
-    $Availability = ($_POST["Availability[]"]);
-    $Lecture = ($_POST["Lecture Location"]);
+    $PhoneNum = ($_POST["Phone"]);
+    $Email = ($_POST["Email"]);
+    $Location = ($_POST["City_Loc"]);
+    $Experience = ($_POST["ProgExp"]);
+    $Availability = ($_POST["Availabile[]"]);
+    $Lecture = ($_POST["Lecture_Loc"]);
+    $FirstName = ($_POST["FName"]);
+    $LastName = ($_POST["LName"]);
     
-    $result = query("INSERT INTO users (Phone number, E-mail address, Location, Experience, Lecture location)
-    VALUES (?, ?, ?, ?, ?, )", $_POST["Phone number"], $_POST["E-mail address"], $_POST["Location"], $_POST["Experience"],
-    $_POST["Lecture location"]);
+    $rows = query("SELECT * FROM users WHERE username = ?", $_POST["username"]);
+    $result = query("INSERT INTO users (FName, LName, Email, Phone, Lecture_Loc, City_Loc, ProgExp) 
+    
+    // INSERT first time...otherwise we UPDATE. HOW? 
+    
     foreach($_POST["Availability"] as $value)
     {
-        $result = query("INSERT INTO users (Availability) VALUES ($value)");
+        $result = query("INSERT INTO availability (userID, Availabile) VALUES ($value)");
+        // Change back to availability and update mysql from steve's file
     }
 }
 ?>
@@ -35,20 +40,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     <p>
 		<div class="content">
 		<form method="post">
-		 <h3>Contact info:</h3>
+		 <h2>Contact info:</h2>
+		 <p>
+		 <h3>First name:</h3>
+		 <p>
+		 <input name="FName" type="text" placeholder="First Name"></input>
+		 <p>
+		 <h3>Last name:</h3>
+		 <input name="LName" type="text" placeholder="Last Name"></input>
 		 <p>
 		 <h3>Phone Number:</h3>
 		 <p>
 		 
-		 <input name="Phone number" type="text" placeholder="(XXX)-XXX-XXXX"></input>
+		 <input name="Phone" type="text" placeholder="(XXX)-XXX-XXXX"></input>
 		 <p>
 		 <h3>E-mail:</h3>
 		 <p>
-		 <input name="E-mail address" type="text" placeholder="Name@name.com"></input>
+		 <input name="Email" type="text" placeholder="Name@name.com"></input>
 		 <p>
 		 
 		 <h3>Choose your preferred location:</h3>
-			<select name="Location">
+			<select name="City_Loc">
 			<option value="Downtown">Downtown</option>
             <option value="Jefferson County">Jefferson County</option>
             <option value="Metro East">Metro East</option>
@@ -60,7 +72,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             </select> 
 		 <p>
 		 <h3>Choose your programming experience:</h3>
-		 <select name="Experience">  
+		 <select name="ProgExp">  
 		 <option value="None">None</option>
 		 <option value="Novice">Novice</option>
 		 <option value="Intermediate">Intermediate</option>
@@ -68,15 +80,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 		 </select>
 		 <p>
 		 <h3>Choose your availability:</h3>
-		 <input type="checkbox" name="Availability[]" id="Availability" value="Morning">Morning</input> 
-		 <input type="checkbox" name="Availability[]" id="Availability" value="Afternoon">Afternoon</input> 
-		 <input type="checkbox" name="Availability[]" id="Availability" value="Evening">Evening</input>
-		 <input type="checkbox" name="Availability[]" id="Availability" value="Weekday">Weekday</input>
-		 <input type="checkbox" name="Availability[]" id="Availability" value="Weekend">Weekend</input>
+		 <input type="checkbox" name="Availabile[]" id="Availabile" value="Morning">Morning</input> 
+		 <input type="checkbox" name="Availabile[]" id="Availabile" value="Afternoon">Afternoon</input> 
+		 <input type="checkbox" name="Availabile[]" id="Availabile" value="Evening">Evening</input>
+		 <input type="checkbox" name="Availabile[]" id="Availabile" value="Weekday">Weekday</input>
+		 <input type="checkbox" name="Availabile[]" id="Availabile" value="Weekend">Weekend</input>
 		 <p>
 		 <h3>Choose your lecture location preference:</h3>
-		 <input type="radio" name="Lecture Location" value="Soldier's Memorial">Soldier's Memorial<br></input>
-		 <input type="radio" name="Lecture location" value="Central Library">Central Library<br></input>
+		 <input type="radio" name="Lecture_Loc" value="Soldier's Memorial">Soldier's Memorial<br></input>
+		 <input type="radio" name="Lecture_Loc" value="Central Library">Central Library<br></input>
 		 <p>
 		 <p>
 		 <button type="submit" class="m-btn">Save Changes</button>
