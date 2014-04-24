@@ -1,10 +1,10 @@
-<div id="container" style="width:800px;background-color:#FFA500;">
-    <div id="header" style="width:800px;background-color:#EEEEEE;">
+<div id="container" style="width:90%;background-color:#FFA500;">
+    <div id="header" style="width:100%;background-color:#EEEEEE;">
         HEADER
         
         MORE HEADERS
     </div>
-    <div id="content" style="width:800px">
+    <div id="content" style="width:100%">
         <div id="left-content" style="height:400px;width:70%;float:left;background-color:#FFA500;"" >
             <table>
                 <tr>
