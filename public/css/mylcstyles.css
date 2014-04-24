@@ -2,8 +2,33 @@
  *  CSS Stylesheet for MyLaunchcode.com
  */
  
+fieldset.bar
+{
+    border-style: 1px solid;
+    border-color: red;
+    max-width: 49%;
+    height: auto;
+    background-color: red;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+fieldset.form
+{
+    border-style: 1px solid;
+    border-color: white;
+    max-width: 49%;
+    height: auto;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 IMG.imgcenter
  {
+    max-width: 100%;
+    height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -15,8 +40,8 @@ IMG.imgcenter
     margin-left: auto;
     margin-right: auto;
     background: rgba(240,0,0,1.0);
-    height: 100px;
-    width: 700px;
+    max-width: 50%;
+    height: auto;
     border: 5px solid rgba(200,0,0,1.0);
  }
  
@@ -24,17 +49,22 @@ IMG.imgcenter
  {
     text-align: center;
     font: Helvetica;
+    font-size: 1.5vw;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    max-width: 100%;
+    height: auto;
  }
  
  h3
  {
     text-align: center;
     font: Helvetica;
-    font-size: 12pt;
+    font-size: 0.8vw;
     color: gray;
+    max-width: 100%;
+    height: auto;
  }
  
  #top
@@ -42,11 +72,15 @@ IMG.imgcenter
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    max-width: 100%;
+    height: auto;
  }
  
  #middle
  {
-    text-align: center;    
+    text-align: center;
+    max-width: 100%;
+    height: auto;    
  }
  
  
@@ -55,9 +89,10 @@ IMG.imgcenter
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 500px;
+    max-width: 50%;
+    height: auto;
     text-align: center;
-    font-size: 16pt;
+    font-size: 1.0vmax;
     color: gray;
     border-top: 3px solid black;
     border-bottom: 3px solid black;

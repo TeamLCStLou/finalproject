@@ -10,24 +10,21 @@
     
     </head>
     </br>
+    <fieldset class="bar">
+    </fieldset>
+    
+    <body background="images/bckgnd.png">
+    
+    <fieldset class="form">
     </br>
-    </br>
-    
-    <h1>
-    </h1>
-    
-    <body>
-    
     <div>
 
             <div id="top">
                 <IMG class="imgcenter" alt="MyLaunchcode.com" src="images/MyLClogo.png"/></a>
             </div>
 
-        
-        <h2>Login</h2>
         <body link= "orange">
-        <h3>--or click <a href="mylcregister.php">here</a> to register--</h3>
+        
         
         <form action = "mylclogin.php" method="post">
             
@@ -59,16 +56,20 @@
         
         </form>
         
+        <h3>--or click <a href="mylcregister.php">here</a> to register--</h3>
+        
         </br>
         </br>
         
         <div>
         <div id= "bottom">The hard is what makes it great. --Jimmy Dugan
         </div>
-    
+        </br>
+    </fieldset>
     </body>
     
-    <h1>
-    </h1>
+    <fieldset class="bar">
+    </fieldset>
+    
 
 <html>
