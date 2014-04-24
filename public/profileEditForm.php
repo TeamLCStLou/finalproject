@@ -11,21 +11,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $Email = ($_POST["Email"]);
     $Location = ($_POST["City_Loc"]);
     $Experience = ($_POST["ProgExp"]);
-    $Availability = ($_POST["Availabile[]"]);
+    // $Availability = ($_POST["Availabile[]"]);
     $Lecture = ($_POST["Lecture_Loc"]);
     $FirstName = ($_POST["FName"]);
     $LastName = ($_POST["LName"]);
     
-    $rows = query("SELECT * FROM users WHERE username = ?", $_POST["username"]);
-    $result = query("INSERT INTO users (FName, LName, Email, Phone, Lecture_Loc, City_Loc, ProgExp) 
+    $rows = query("SELECT FROM users WHERE username = ?", $_POST["username"]);
+    $result = query("INSERT INTO users (FName, LName, Email, Phone, Lecture_Loc, City_Loc, ProgExp) VALUES (?, ?, ?, ?, ?, ?, ?)",
+    $_POST["FName"], $_POST["LName"], $_POST["Email"], $_POST["Phone"], $_POST["Lecture_Loc"], $_POST["City_Loc"], $_POST["ProgExp"]); 
+    
     
     // INSERT first time...otherwise we UPDATE. HOW? 
     
-    foreach($_POST["Availability"] as $value)
-    {
-        $result = query("INSERT INTO availability (userID, Availabile) VALUES ($value)");
+    // foreach($_POST["Availability"] as $value)
+   // {
+     //   $result = query("INSERT INTO availability (userID, Availabile) VALUES ($value)");
         // Change back to availability and update mysql from steve's file
-    }
+    // }
 }
 ?>
 
