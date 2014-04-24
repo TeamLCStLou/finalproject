@@ -13,7 +13,7 @@ table.links
     
 </style>
 
-<div id="container" style="width:500px">
+<div id="container" style="width:95%">
     <table class="links">
         <tr>
             <th>Quick Links</th>
