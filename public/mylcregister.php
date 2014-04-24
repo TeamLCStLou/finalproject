@@ -100,7 +100,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             $id = $rows[0]["id"];
             $row = $rows[0];
             $_SESSION["id"] = $row["id"];
-            redirect("/");
+            redirect("profileEditForm.php");
         }
     }
   
