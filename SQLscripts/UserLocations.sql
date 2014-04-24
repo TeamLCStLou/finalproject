@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 14, 2014 at 08:07 PM
+-- Generation Time: Apr 23, 2014 at 09:24 PM
 -- Server version: 5.5.32-MariaDB
 -- PHP Version: 5.5.3
 
@@ -23,15 +23,15 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Availability`
+-- Table structure for table `UserLocations`
 --
 
-DROP TABLE IF EXISTS `Availability`;
-CREATE TABLE IF NOT EXISTS `Availability` (
-  `user_id` int(10) NOT NULL,
-  `Availability` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `created_on` timestamp(2) NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+DROP TABLE IF EXISTS `UserLocations`;
+CREATE TABLE IF NOT EXISTS `UserLocations` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Location` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
