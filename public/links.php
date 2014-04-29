@@ -4,7 +4,7 @@
     
     require("../includes/MyLCfunctions.php");
         
-    $result = query("SELECT * FROM  `siteLinks` ORDER BY 'spotlight'");
+    $result = query("SELECT * FROM  `siteLinks` ORDER BY `siteLinks`.`order` ASC");
 
     extract($result);
     
