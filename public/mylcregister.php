@@ -99,7 +99,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             $rows = query("SELECT LAST_INSERT_ID() AS id");
             $id = $rows[0]["id"];
             $row = $rows[0];
-            $_SESSION["id"] = $row["id"];
+            $_SESSION["id"] = $id;
+            
             redirect("profileEditForm.php");
         }
     }

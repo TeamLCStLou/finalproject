@@ -1,47 +1,16 @@
-<?php
-
-require("../includes/MyLCconfig.php");
-if(!isset($_SESSION["id"]))
-{
-    die("You must be logged in to view this page");
-}
-if($_SERVER["REQUEST_METHOD"] == "POST")
-{
-    $PhoneNum = ($_POST["Phone"]);
-    $Email = ($_POST["Email"]);
-    $Location = ($_POST["City_Loc"]);
-    $Experience = ($_POST["ProgExp"]);
-    // $Availability = ($_POST["Availabile[]"]);
-    $Lecture = ($_POST["Lecture_Loc"]);
-    $FirstName = ($_POST["FName"]);
-    $LastName = ($_POST["LName"]);
-    
-    $rows = query("SELECT FROM users WHERE username = ?", $_POST["username"]);
-    $result = query("INSERT INTO users (FName, LName, Email, Phone, Lecture_Loc, City_Loc, ProgExp) VALUES (?, ?, ?, ?, ?, ?, ?)",
-    $_POST["FName"], $_POST["LName"], $_POST["Email"], $_POST["Phone"], $_POST["Lecture_Loc"], $_POST["City_Loc"], $_POST["ProgExp"]); 
-    
-    
-    // INSERT first time...otherwise we UPDATE. HOW? 
-    
-    // foreach($_POST["Availability"] as $value)
-   // {
-     //   $result = query("INSERT INTO availability (userID, Availabile) VALUES ($value)");
-        // Change back to availability and update mysql from steve's file
-    // }
-}
-?>
-
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Edit Profile</title>
     </head>
     <body>
+    Welcome to your new profile! Please provide us a bit more information about yourself.
+    <P>
     <h1>Edit Profile</h1>
     <p>
     <p>
 		<div class="content">
-		<form method="post">
+		<form name="profileEditForm" id="ProfileEditForm" action="mylchomepage.php" method="post">
 		 <h2>Contact info:</h2>
 		 <p>
 		 <h3>First name:</h3>
@@ -94,9 +63,54 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 		 <p>
 		 <p>
 		 <button type="submit" class="m-btn">Save Changes</button>
+		 <P>
+		 <P>
+		 Or <a href="logout.php">Log Out</a>
 		 
 		 </form>
 		</div>
 	</body>
 </html>  
+
+<?php
+
+require("../includes/MyLCconfig.php");
+if(!isset($_SESSION["id"]))
+{
+    die("You must be logged in to view this page");
+    redirect("mylcregister.php");
+}
+else if(isset($_SESSION["id"]))
+{
+      $rows = query("SELECT * FROM users WHERE id = ?", $_SESSION["id"]);
+}
+
+if($_SERVER["REQUEST_METHOD"] == "POST")
+{
+   
+    
+    //$AllAvailable = "";
+    //$userid = ($_SESSION["id"]);
+    
+    
+  
+     if(count($rows) == 0)
+     {
+        query("INSERT INTO users (FName, LName, Email, Phone, Lecture_Loc, City_loc, ProgExp) VALUES (?, ?, ?, ?, ?, ?, ?)",
+        $_POST["FName"], $_POST["LName"], $_POST["Email"], $_POST["Phone"], $_POST["Lecture_Loc"], $_POST["City_Loc"], 
+        $_POST["ProgExp"]);
+        // redirect("mylchomepage.php");
+     }
+         
+    
+    //foreach( $Availability as $value)
+    //{
+      //  $AllAvailable .= $value . ", ";
+    //}
+    
+    //$AllAvailable = substr($AllAvailable, 0, -2);           
+}
+?>
+
+
 		 
