@@ -12,7 +12,9 @@
 
 <body>
 
-<h1> HELLO AND WELCOME TO MYLCHOMEPAGE! </h1>
+    <?php 
+        require("homecontainer". ".php"); 
+    ?>
 
 </body>
 

@@ -1,28 +1,15 @@
-<style>
-table.links, td,th
-{   
-    border-collapse:collapse;
-    border:1px solid green;
-    text-align:center;
-}    
-
-table.links
-{
-    width:100%;
-}
+<?php
+    // connect to the database  
+    require ("../includes/datalogin.php");
     
-</style>
+    require("../includes/MyLCfunctions.php");
+        
+    $result = query("SELECT * FROM  `siteLinks` ORDER BY `siteLinks`.`order` ASC");
 
-<div>
-    <table class="links">
-        <tr>
-            <th>Quick Link </th>
-        </tr>
-        <tr>
-            <td>link 1</td>
-        </tr>
-        <tr>
-            <td>link 2</td>
-        </tr>
-    </table>
-</div>
+    extract($result);
+    
+    require("../templates/links.php");
+
+
+
+?>
