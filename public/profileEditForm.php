@@ -10,7 +10,7 @@
     <p>
     <p>
 		<div class="content">
-		<form name="profileEditForm" id="ProfileEditForm" action="mylchomepage.php" method="post">
+		<form name="profileEditForm" id="ProfileEditForm" method="post">
 		 <h2>Contact info:</h2>
 		 <p>
 		 <h3>First name:</h3>
@@ -87,20 +87,13 @@ else if(isset($_SESSION["id"]))
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
-   
     
     //$AllAvailable = "";
-    //$userid = ($_SESSION["id"]);
-    
-    
-  
-     if(count($rows) == 0)
-     {
-        query("INSERT INTO users (FName, LName, Email, Phone, Lecture_Loc, City_loc, ProgExp) VALUES (?, ?, ?, ?, ?, ?, ?)",
+   
+        query("UPDATE users SET FName=?, LName=?, Email=?, Phone=?, Lecture_Loc=?, City_loc=?, ProgExp=? WHERE id=?",
         $_POST["FName"], $_POST["LName"], $_POST["Email"], $_POST["Phone"], $_POST["Lecture_Loc"], $_POST["City_Loc"], 
-        $_POST["ProgExp"]);
-        // redirect("mylchomepage.php");
-     }
+        $_POST["ProgExp"], $_SESSION["id"]);
+        redirect("mylchomepage.php");
          
     
     //foreach( $Availability as $value)

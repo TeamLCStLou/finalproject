@@ -1,5 +1,9 @@
-<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+<!--<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+-->
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+
 <style>
+
 
 #header
 {
@@ -29,9 +33,11 @@
     background-size:cover;
 //    Opacity:0.2;
 }
-b
+b, p
 {
-    font-family: 'PT Sans Narrow', 'sans-serif';
+//    font-family: 'PT Sans Narrow', 'sans-serif';
+    font-family: 'Oswald', sans-serif;
+    color: white;
 }    
 </style>
 
@@ -43,22 +49,11 @@ b
     </div>
     
     <div id="content" style="width:100%">
-        <div id="left-content" style="height:400px;width:75%;float:left;background-color:red;" >
-            <table style="background-color:red;width:100%;opacity:0.9;" >
-              <tr>
-                <td style="background-color:red;width:30%;">    
-                    <img height="150px" style="border-style:groove; border-width:1px;" src="http://static2.businessinsider.com/image/4f3433986bb3f7b67a00003c/a-parasite-found-in-cats-could-be-manipulating-our-brains.jpg"/>
-                </td>
-                <td style="background-color:red;width:70%;text-align:left;">
-                    <b>Name:</b> Stephen Smith<br/>
-                    <b>City Location:</b> South City<br/>
-                    <b>Lecture Location:</b> Central Library<br/>
-                </td>    
-              </tr>
-            </table>
-        </div>
+        <div id="left-content" style="height:800px;width:75%;float:left;background-color:red;" >
 
-        <div id="right-content" style="height:400px;width:25%;float:right;background-color:#FFCCCC;">
+            <?php require("../public/profileDetails.php"); ?>
+
+        <div id="right-content" style="height:800px;width:25%;float:right;background-color:#FFCCCC;">
             <?php require("../public/links.php"); ?>
         </div>
                
