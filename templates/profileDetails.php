@@ -6,7 +6,7 @@
     </td>
     <td style="background-color:red;width:70%;text-align:left;">
         <p>
-            <b>Name:</b> <?= $FName ." " . $LName ;?> <br/>
+            <b style="font-size:x-large;"><?= $FName ." " . $LName ;?> </b><br/><br/>
             <b>Email:</b> <?= $Email ;?> <br/>        
             <b>Phone:</b> <?= $Phone ;?> <br/>        
             <b>City Location: </b><?= $City_Loc ?><br/>
