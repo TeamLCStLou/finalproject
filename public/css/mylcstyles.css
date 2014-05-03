@@ -2,6 +2,7 @@
  *  CSS Stylesheet for MyLaunchcode.com
  */
  
+
 fieldset.bar
 {
     border-style: 1px solid;
@@ -9,6 +10,17 @@ fieldset.bar
     max-width: 49%;
     height: auto;
     background-color: red;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+fieldset.bar_2
+{
+    border-style: 1px solid;
+    border-color: white;
+    width: 90%;
+    height: auto;
+    background-color: white;
     margin-left: auto;
     margin-right: auto;
 }
@@ -23,6 +35,18 @@ fieldset.form
     margin-left: auto;
     margin-right: auto;
 }
+
+fieldset.column
+{
+    float: left;
+    max-width: 100%;
+    height: auto; 
+    text-align: left; 
+    width: 200px; 
+    border-style: 0.1px solid;
+    border-color: white;
+}
+ 
 
 
 IMG.imgcenter
@@ -67,6 +91,16 @@ IMG.imgcenter
     height: auto;
  }
  
+ h4
+ {
+    text-align: center;
+    font-family: 'Source Code Pro';
+    font-size: 1.2vw;
+    color: black;
+    max-width: 100%;
+    height: auto;
+ }
+ 
  #top
  {
     margin-left: auto;
@@ -81,6 +115,14 @@ IMG.imgcenter
     text-align: center;
     max-width: 100%;
     height: auto;    
+ }
+ 
+ #column
+ {
+    float: left;
+    max-width: 100%;
+    height: auto; 
+    text-align: left;  
  }
  
  
