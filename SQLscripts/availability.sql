@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 14, 2014 at 08:07 PM
+-- Generation Time: May 02, 2014 at 09:53 PM
 -- Server version: 5.5.32-MariaDB
 -- PHP Version: 5.5.3
 
@@ -28,10 +28,24 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `Availability`;
 CREATE TABLE IF NOT EXISTS `Availability` (
-  `user_id` int(10) NOT NULL,
-  `Availability` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `created_on` timestamp(2) NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `Avail_ID` int(2) NOT NULL AUTO_INCREMENT,
+  `Time` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `Order` int(2) NOT NULL,
+  PRIMARY KEY (`Time`),
+  UNIQUE KEY `Avail_ID` (`Avail_ID`),
+  KEY `Order` (`Order`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `Availability`
+--
+
+INSERT INTO `Availability` (`Avail_ID`, `Time`, `Order`) VALUES
+(2, 'Afternoon', 2),
+(3, 'Evening', 3),
+(1, 'Morning', 1),
+(4, 'Weekdays', 4),
+(5, 'Weekends', 5);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
