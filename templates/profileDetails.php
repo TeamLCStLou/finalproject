@@ -15,7 +15,7 @@
             <b>Availability: </b> 
                 <?php foreach ($avail_result as $avail_item):
                 
-                     print($avail_item['Availability']. "s  |  "); 
+                     print($avail_item['Availability']. "  |  "); 
                      
                      endforeach 
                      

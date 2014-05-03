@@ -10,7 +10,7 @@
 
 </head>
 
-<body>
+<body background="../images/bckgnd.png">
 
     <?php 
         require("homecontainer". ".php"); 
