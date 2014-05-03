@@ -44,7 +44,10 @@ b, p
 
 <div id="container" style="width:90%;">
     <div id="header">
-        <img class="imgcenter" alt="MyLaunchcode.com" src="http://launchcodestl.com/assets/logo-white-eaaa6c175ca5f34175c60ca6ed9b1e60.png" style="height:auto;width:auto;max-height:50%;"/>        
+        <div style="width:90%;">
+           <img class="imgcenter" alt="MyLaunchcode.com" src="http://launchcodestl.com/assets/logo-white-eaaa6c175ca5f34175c60ca6ed9b1e60.png" style="position:relative;height:auto;width:auto;max-height:50%;"/>                
+        </div>
+
         <img class="imgcenter" alt="MyLaunchcode.com" src="../images/MyLClogo.png" style="height:auto;width:auto;max-height:98%;"/>        
 
     </div>
@@ -53,6 +56,8 @@ b, p
         <div id="left-content" style="height:800px;width:75%;float:left;background-color:red;" >
 
             <?php require("../public/profileDetails.php"); ?>
+            
+            <?php require("../public/course_progress.php"); ?>
 
         <div id="right-content" style="height:800px;width:25%;float:right;background-color:#2C426E;">
             <?php require("../public/links.php"); ?>

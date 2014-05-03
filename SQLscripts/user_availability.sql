@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 DROP TABLE IF EXISTS `user_availability`;
-CREATE TABLE IF NOT EXISTS `user_availability' (
+CREATE TABLE IF NOT EXISTS `user_availability` (
   `user_id` int(10) NOT NULL,
   `Availability` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `created_on` timestamp(2) NOT NULL DEFAULT CURRENT_TIMESTAMP
