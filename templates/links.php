@@ -16,17 +16,19 @@ table.links
     
 </style>
 
-<div id="container" style="width:95%;margin-left:auto;margin-right:auto;">
-    <table class="links">
-        <tr>
-            <th>Quick Links</th>
-        </tr>
-        <?php foreach ($result as $linkitem): ?>
-
+<div style="padding-top:5px;">
+    <div style="width:95%;height:90%;margin-left:auto;margin-right:auto;background-color:#3D5C99;padding-top:15px;">
+        <table class="links">
             <tr>
-                <td><a href="<?= $linkitem["link_href"] ?>" target="_blank"> <?= $linkitem["link_text"]?></a></td>
+                <th>Quick Links</th>
             </tr>
+            <?php foreach ($result as $linkitem): ?>
 
-        <?php endforeach ?>
-    </table>
+                <tr>
+                    <td><a href="<?= $linkitem["link_href"] ?>" target="_blank"> <?= $linkitem["link_text"]?></a></td>
+                </tr>
+
+            <?php endforeach ?>
+        </table>
+    </div>
 </div>

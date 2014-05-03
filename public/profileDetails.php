@@ -6,9 +6,13 @@
     require ("../includes/datalogin.php");
 
         
-    $result = query("SELECT * FROM  `users` WHERE id=?", $_SESSION["id"]);
+    $profile_result = query("SELECT * FROM  `users` WHERE id=?", $_SESSION["id"]);
+    $avail_result = query("SELECT * FROM  `Availability` WHERE user_id=?", $_SESSION["id"]);
 
-    extract($result[0]);
+    extract($profile_result[0]);
+    extract($avail_result[0]);
+    
+//    print_r($avail_result);
     
     require("../templates/profileDetails.php");
 
