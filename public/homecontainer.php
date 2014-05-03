@@ -9,8 +9,10 @@
 {
     width:100%;
     height:75px;
-    background-image: url("../images/bckgnd.png");
-    background-repeat: repeat-x;
+//    background-image: url("../images/bckgnd.png");
+//    background-repeat: repeat-x;
+    background-color: blue;
+    Opacity:0.8;
     border-width:1px;
     border-style:solid;
 }
@@ -57,7 +59,7 @@ b, p
 
             <?php require("../public/profileDetails.php"); ?>
             
-            <?php require("../public/course_progress.php"); ?>
+            <?php //require("../public/course_progress.php"); ?>
 
         <div id="right-content" style="height:800px;width:25%;float:right;background-color:#2C426E;">
             <?php require("../public/links.php"); ?>
