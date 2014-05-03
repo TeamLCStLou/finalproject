@@ -31,10 +31,14 @@ require("../includes/MyLCfunctions.php");
     <div id="top">
         <IMG class="imgcenter" alt="MyLaunchcode.com" src="images/MyLClogo.png"/></a>
     </div>
+    </br>
+    </br>
 
     
     <form method="post">
+    
     <fieldset class="column">
+    <h2>Please select the region of St. Louis that you would prefer to study in:</h2>
     <?php $sql = "SELECT `Name` FROM Locations";
 
 
@@ -50,14 +54,41 @@ require("../includes/MyLCfunctions.php");
         <?php endforeach; ?>
     </div>
     </fieldset>
+    
     <fieldset class="column">
+    <h2>Please select the experience level of the group that you would prefer:</h2>
+    <?php $sql = "SELECT `ProgExp` FROM ProgExp";
+
+
+    $query_resource = query($sql);
+    extract($query_resource);
+
+    foreach($query_resource as $exp):
+    ?>
+    
     <div class="form-group" id="column">
-        <input type="checkbox" name="time" name="Availability"/>Monday</br>
-        </div>
-        </fieldset>
-        <fieldset class="column">
+    <input type="checkbox" name="ProgExp[]" value="<?php echo $exp['ProgExp']; ?>"/>
+    <span><?php echo $exp['ProgExp']; ?></span></br>
+    <?php endforeach; ?>
+    
+    </div>
+    </fieldset>
+    
+    <fieldset class="column">
+    <h2>Please select your preferred study time:</h2>
+    <?php $sql = "SELECT `Time` FROM Availability";
+
+
+    $query_resource = query($sql);
+    extract($query_resource);
+
+    foreach($query_resource as $time):
+    ?>
+    
     <div class="form-group" id="column">
-    <input type="checkbox" name="experience" name="Experience"/>Expert</br>
+    <input type="checkbox" name="Availability[]" value="<?php echo $time['Time']; ?>"/>
+    <span><?php echo $time['Time']; ?></span></br>
+    <?php endforeach; ?>
     </div>
     </fieldset>
     </br>
