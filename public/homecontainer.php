@@ -47,12 +47,13 @@ b, p
 
 <div id="container" style="width:90%;">
     <div id="header">
-        <div style="width:90%;">
-           <img class="imgcenter" alt="MyLaunchcode.com" src="http://launchcodestl.com/assets/logo-white-eaaa6c175ca5f34175c60ca6ed9b1e60.png" style="position:relative;height:auto;width:auto;max-height:50%;"/>                
+        <div style="width:50%;float:left;align-self:center;">
+           <img class="imgcenter" alt="MyLaunchcode.com" src="http://launchcodestl.com/assets/logo-white-eaaa6c175ca5f34175c60ca6ed9b1e60.png" style="position:relative;height:auto;width:auto;max-height:70%;"/>                
         </div>
-
-        <img class="imgcenter" alt="MyLaunchcode.com" src="../images/MyLClogo.png" style="height:auto;width:auto;max-height:98%;"/>        
-
+        <div style="width:50%;float:right;align-self:center;">
+            <img class="imgcenter" alt="MyLaunchcode.com" src="../images/MyLClogo.png" style="height:auto;width:auto;max-height:98%;"/>        
+        </div>
+        <div style="clear:both"></div>
     </div>
     
     <div id="content" style="width:100%">

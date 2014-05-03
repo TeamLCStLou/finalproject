@@ -8,8 +8,6 @@
     $profile_result = query("SELECT * FROM  `users` WHERE id=?", $_SESSION["id"]);
     $avail_result = query("SELECT * FROM  `user_availability` WHERE user_id=?", $_SESSION["id"]);
 
-    print( $_SESSION["id"]);
-
     if (count($profile_result) == 1)
     {
         extract($profile_result[0]);

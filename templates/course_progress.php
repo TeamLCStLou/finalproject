@@ -1,5 +1,5 @@
 <div style="padding-top:25px;">
-    <table style="background-color:#8A0000;;width:90%;opacity:0.75;margin-left:auto;margin-right:auto">
+    <table style="background-color:#8A0000;;width:90%;opacity:0.85;margin-left:auto;margin-right:auto">
         <tr>
             <th style="background-color:#8A0000;;width:30%;" colspan="11"> <b> Course Progress </b></th>
         </tr>
