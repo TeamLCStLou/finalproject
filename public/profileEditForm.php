@@ -1,3 +1,40 @@
+<?php
+
+require("../includes/datalogin.php");
+require("../includes/MyLCconfig.php");
+
+if(!isset($_SESSION["id"]))
+{
+    die("You must be logged in to view this page");
+    redirect("mylcregister.php");
+}
+else if(isset($_SESSION["id"]))
+{
+      $rows = query("SELECT * FROM users WHERE id = ?", $_SESSION["id"]);
+}
+
+if($_SERVER["REQUEST_METHOD"] == "POST")
+{
+    
+    //$AllAvailable = "";
+   
+        query("UPDATE users SET FName=?, LName=?, Email=?, Phone=?, Lecture_Loc=?, City_loc=?, ProgExp=? WHERE id=?",
+        $_POST["FName"], $_POST["LName"], $_POST["Email"], $_POST["Phone"], $_POST["Lecture_Loc"], $_POST["City_Loc"], 
+        $_POST["ProgExp"], $_SESSION["id"]);
+        redirect("mylchomepage.php");
+         
+    
+    //foreach( $Availability as $value)
+    //{
+      //  $AllAvailable .= $value . ", ";
+    //}
+    
+    //$AllAvailable = substr($AllAvailable, 0, -2);           
+}
+?>
+
+
+		 
 <!DOCTYPE html>
 <html>
 	<head>
@@ -31,23 +68,31 @@
 		 <p>
 		 
 		 <h3>Choose your preferred location:</h3>
-			<select name="City_Loc">
-			<option value="Downtown">Downtown</option>
-            <option value="Jefferson County">Jefferson County</option>
-            <option value="Metro East">Metro East</option>
-            <option value="Midtown">Midtown</option>
-            <option value="North County">North County</option>
-            <option value="South County">South County</option>
-            <option value="St. Charles">St. Charles</option>
-            <option value="West County">West County</option>
+		 <select name="City_Loc">
+		 <?php $sql = "SELECT `Name` FROM Locations";
+		       $queryresponse = query($sql);
+		       extract($queryresponse);
+		       foreach($queryresponse as $location):
+		       ?>
+		       
+		       	
+			<option name="Locations[]" value="<?php echo $location['Name']; ?>"</option>
+			<span><?php echo $location['Name']; ?></span></br>
+			<?php endforeach; ?>
             </select> 
 		 <p>
 		 <h3>Choose your programming experience:</h3>
 		 <select name="ProgExp">  
-		 <option value="None">None</option>
-		 <option value="Novice">Novice</option>
-		 <option value="Intermediate">Intermediate</option>
-		 <option value="Advanced">Advanced</option>
+		<?php $sql = "SELECT `ProgExp` FROM ProgExp";
+		       $queryresponse = query($sql);
+		       extract($queryresponse);
+		       foreach($queryresponse as $location):
+		       ?>
+		       
+		       	
+			<option name="ProgExp[]" value="<?php echo $location['ProgExp']; ?>"</option>
+			<span><?php echo $location['ProgExp']; ?></span></br>
+			<?php endforeach; ?>
 		 </select>
 		 <p>
 		 <h3>Choose your availability:</h3>
@@ -72,38 +117,4 @@
 	</body>
 </html>  
 
-<?php
 
-require("../includes/MyLCconfig.php");
-if(!isset($_SESSION["id"]))
-{
-    die("You must be logged in to view this page");
-    redirect("mylcregister.php");
-}
-else if(isset($_SESSION["id"]))
-{
-      $rows = query("SELECT * FROM users WHERE id = ?", $_SESSION["id"]);
-}
-
-if($_SERVER["REQUEST_METHOD"] == "POST")
-{
-    
-    //$AllAvailable = "";
-   
-        query("UPDATE users SET FName=?, LName=?, Email=?, Phone=?, Lecture_Loc=?, City_loc=?, ProgExp=? WHERE id=?",
-        $_POST["FName"], $_POST["LName"], $_POST["Email"], $_POST["Phone"], $_POST["Lecture_Loc"], $_POST["City_Loc"], 
-        $_POST["ProgExp"], $_SESSION["id"]);
-        redirect("mylchomepage.php");
-         
-    
-    //foreach( $Availability as $value)
-    //{
-      //  $AllAvailable .= $value . ", ";
-    //}
-    
-    //$AllAvailable = substr($AllAvailable, 0, -2);           
-}
-?>
-
-
-		 
