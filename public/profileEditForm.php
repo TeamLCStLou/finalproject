@@ -15,20 +15,27 @@ else if(isset($_SESSION["id"]))
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
-    
-    //$AllAvailable = "";
-   
+        if(isset($_POST['Availabile']))
+        {
+            $AllAvailable = $_POST['Availabile'];
+        }
+        print_r($_POST['Availabile']);
+
         query("UPDATE users SET FName=?, LName=?, Email=?, Phone=?, Lecture_Loc=?, City_loc=?, ProgExp=? WHERE id=?",
         $_POST["FName"], $_POST["LName"], $_POST["Email"], $_POST["Phone"], $_POST["Lecture_Loc"], $_POST["City_Loc"], 
         $_POST["ProgExp"], $_SESSION["id"]);
-        redirect("mylchomepage.php");
+//        redirect("mylchomepage.php");
          
+
     
-    //foreach( $Availability as $value)
-    //{
-      //  $AllAvailable .= $value . ", ";
-    //}
-    
+    foreach( $_POST['Availabile'] as $value)
+    {
+        query("INSERT INTO  `matchCode`.`user_availability` (`user_id` , `Availability`) VALUES (?, ?)", $_SESSION["id"], $value);
+    }
+
+
+
+        
     //$AllAvailable = substr($AllAvailable, 0, -2);           
 }
 ?>
@@ -96,11 +103,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 		 </select>
 		 <p>
 		 <h3>Choose your availability:</h3>
-		 <input type="checkbox" name="Availabile[]" id="Availabile" value="Morning">Morning</input> 
-		 <input type="checkbox" name="Availabile[]" id="Availabile" value="Afternoon">Afternoon</input> 
-		 <input type="checkbox" name="Availabile[]" id="Availabile" value="Evening">Evening</input>
-		 <input type="checkbox" name="Availabile[]" id="Availabile" value="Weekday">Weekday</input>
-		 <input type="checkbox" name="Availabile[]" id="Availabile" value="Weekend">Weekend</input>
+		 <input type="checkbox" name="Availabile[]" value="Morning">Morning</input> 
+		 <input type="checkbox" name="Availabile[]" value="Afternoon">Afternoon</input> 
+		 <input type="checkbox" name="Availabile[]" value="Evening">Evening</input>
+		 <input type="checkbox" name="Availabile[]" value="Weekday">Weekday</input>
+		 <input type="checkbox" name="Availabile[]" value="Weekend">Weekend</input>
 		 <p>
 		 <h3>Choose your lecture location preference:</h3>
 		 <input type="radio" name="Lecture_Loc" value="Soldier's Memorial">Soldier's Memorial<br></input>
@@ -116,5 +123,3 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 		</div>
 	</body>
 </html>  
-
-
