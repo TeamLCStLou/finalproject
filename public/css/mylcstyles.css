@@ -36,19 +36,6 @@ fieldset.form
     margin-right: auto;
 }
 
-fieldset.column
-{
-    float: left;
-    max-width: 100%;
-    height: auto; 
-    text-align: left; 
-    width: 200px; 
-    border-style: 0.1px solid;
-    border-color: white;
-}
- 
-
-
 IMG.imgcenter
  {
     max-width: 100%;
@@ -94,7 +81,7 @@ IMG.imgcenter
  h4
  {
     text-align: center;
-    font-family: 'Source Code Pro';
+    font-family: 'Inconsolata', Arial, serif; font-weight: 400;
     font-size: 1.2vw;
     color: black;
     max-width: 100%;
@@ -119,10 +106,9 @@ IMG.imgcenter
  
  #column
  {
-    float: left;
     max-width: 100%;
-    height: auto; 
-    text-align: left;  
+    height: auto;
+    text-align: center; 
  }
  
  

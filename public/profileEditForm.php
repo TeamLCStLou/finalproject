@@ -24,7 +24,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         query("UPDATE users SET FName=?, LName=?, Email=?, Phone=?, Lecture_Loc=?, City_loc=?, ProgExp=? WHERE id=?",
         $_POST["FName"], $_POST["LName"], $_POST["Email"], $_POST["Phone"], $_POST["Lecture_Loc"], $_POST["City_Loc"], 
         $_POST["ProgExp"], $_SESSION["id"]);
-        redirect("mylchomepage.php");
+//        redirect("mylchomepage.php");
          
 
     
@@ -45,7 +45,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 <!DOCTYPE html>
 <html>
 	<head>
-	    <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro:200" rel="stylesheet" type="text/css"/>
+	    <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css"/>
 		<link href= "css/mylcstyles.css" rel= "stylesheet"/>
     
     <title>MyLaunchCode.com</title>
