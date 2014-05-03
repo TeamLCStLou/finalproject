@@ -1,41 +1,48 @@
 <?php
 
+    // configuration
+    require("../includes/MyLCconfig.php"); 
+    
+if($_SERVER["REQUEST_METHOD"] == "POST")
 {
-    header('Refresh: 1, mylchomepage.php/');
-}
+    // Define $username and $password 
+    $username=$_POST['username']; 
+    $password=($_POST['password']);
+    
+    $username = stripslashes($username);
+    $password = stripslashes($password);
 
-//MySQL Database Connect
- /*include 'datalogin.php';
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST")
-    {
+     
+     // validate submission
         if (empty($_POST["username"]))
         {
-            echo "You must enter a valid username.";
-            header('Refresh: 2, mylclogin_form.php/');
+            apologize("You must provide your username.");
         }
-        
-        if (empty($_POST["password"]))
+        else if (empty($_POST["password"]))
         {
-            echo "You must enter a valid password.";
-            header('Refresh: 2, mylclogin_form.php/');
+            apologize("You must provide your password.");
         }
+
+        // look for user
         
+        $result = query("SELECT * FROM `users` WHERE username = '$username'");
+        $row = $result[0];
         
+        print crypt($password);
+        print $row["password"];
         
-        $user = mysqli_query("localhost")
+        if (crypt($_POST["password"], $row["password"]) == $row["password"])
+            {
+                // store user's ID in session
+                $_SESSION["id"] = $row["id"];
+                redirect("mylchomepage.php");
+            }
+            else
+            {
+                apologize("Wrong username or password! Please try again.");
+              
+            }
+}
         
-        ("SELECT * FROM user WHERE username = ?", $_POST["username"]);
-        
-        if (count($user) == 1)
-        {
-            echo "WOOT!";
-        }
-    }
-    
-    else
-    {
-        header('Location: http://pset7/mylclogin_form.php/');
-    }
-    */
-?> 
+?>
+
