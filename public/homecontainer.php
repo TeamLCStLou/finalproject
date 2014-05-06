@@ -65,6 +65,8 @@ b, p
             </div>
         <div id="right-content" style="height:800px;width:25%;float:right;background-color:#2C426E;">
             <?php require("../public/links.php"); ?>
+
+            <?php require("../public/reddit.php"); ?>
         </div>
                
     </div>  
