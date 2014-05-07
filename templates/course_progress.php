@@ -1,7 +1,17 @@
-<div style="padding-top:25px;">
+<style>
+    div.course-progress
+    {
+        padding-top:20px;
+        height:100%;
+        min-height:500px;
+    }
+
+</style>
+
+<div class="course-progress">
     <table style="background-color:#8A0000;;width:90%;opacity:0.85;margin-left:auto;margin-right:auto">
         <tr>
-            <th style="background-color:#8A0000;;width:30%;" colspan="11"> <b> Course Progress </b></th>
+            <th style="background-color:#8A0000;text-align:left;width:30%;"colspan="11"> <b> Course Progress </b></th>
         </tr>
         <tr style="background-color:#8A0000;">
             <td> <b> pset </b></td>

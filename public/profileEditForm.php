@@ -15,16 +15,15 @@ else if(isset($_SESSION["id"]))
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
-        if(isset($_POST['Availabile']))
-        {
-            $AllAvailable = $_POST['Availabile'];
-        }
-        print_r($_POST['Availabile']);
+//        if(isset($_POST['Availabile']))
+//        {
+//            $AllAvailable = $_POST['Availabile'];
+//        }
 
         query("UPDATE users SET FName=?, LName=?, Email=?, Phone=?, Lecture_Loc=?, City_loc=?, ProgExp=? WHERE id=?",
         $_POST["FName"], $_POST["LName"], $_POST["Email"], $_POST["Phone"], $_POST["Lecture_Loc"], $_POST["City_Loc"], 
         $_POST["ProgExp"], $_SESSION["id"]);
-//        redirect("mylchomepage.php");
+        redirect("mylchomepage.php");
          
 
     
@@ -32,11 +31,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         query("INSERT INTO  `matchCode`.`user_availability` (`user_id` , `Availability`) VALUES (?, ?)", $_SESSION["id"], $value);
     }
-
-
-
-        
-    //$AllAvailable = substr($AllAvailable, 0, -2);           
 }
 ?>
 
