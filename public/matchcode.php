@@ -35,10 +35,11 @@ require("../includes/MyLCfunctions.php");
     </br>
 
     
-    <form method="post">
+    <form method="POST" action="matchcode_check.php">
     
-    <fieldset class="column">
-    <h2>Please select the region of St. Louis that you would prefer to study in:</h2>
+    <div id="middle">
+    <h2>Select preferences for your study group below</h2>
+    <h4>Location:</h4>
     <?php $sql = "SELECT `Name` FROM Locations";
 
 
@@ -53,10 +54,10 @@ require("../includes/MyLCfunctions.php");
         <span><?php echo $location['Name']; ?></span></br>
         <?php endforeach; ?>
     </div>
-    </fieldset>
+    </div>
     
-    <fieldset class="column">
-    <h2>Please select the experience level of the group that you would prefer:</h2>
+    <div id="middle">
+    <h4>Group Experience Level:</h4>
     <?php $sql = "SELECT `ProgExp` FROM ProgExp";
 
 
@@ -66,16 +67,16 @@ require("../includes/MyLCfunctions.php");
     foreach($query_resource as $exp):
     ?>
     
-    <div class="form-group" id="column">
+    <div class="form-group" id="middle">
     <input type="checkbox" name="ProgExp[]" value="<?php echo $exp['ProgExp']; ?>"/>
     <span><?php echo $exp['ProgExp']; ?></span></br>
     <?php endforeach; ?>
     
     </div>
-    </fieldset>
+    </div>
     
-    <fieldset class="column">
-    <h2>Please select your preferred study time:</h2>
+    <div id="middle">
+    <h4>Time Available:</h4>
     <?php $sql = "SELECT `Time` FROM Availability";
 
 
@@ -85,21 +86,22 @@ require("../includes/MyLCfunctions.php");
     foreach($query_resource as $time):
     ?>
     
-    <div class="form-group" id="column">
+    <div class="form-group" id="middle">
     <input type="checkbox" name="Availability[]" value="<?php echo $time['Time']; ?>"/>
     <span><?php echo $time['Time']; ?></span></br>
     <?php endforeach; ?>
     </div>
-    </fieldset>
+    </div>
+    
     </br>
-    <fieldset class="bar_2">
+    <div id="middle">
     <div class="form-group" id="middle">
-        <button type="submit" action="matchcode_check.php" class="m-btn">Submit</button>
+        <button type="submit" class="m-btn">Submit</button>
     </div>
        
     </form>
 
-    <h3>or <a href="mylchomepage.php">Homepage</a></h3>
+    <h3>or <a href="mylchomepage.php">Return to Homepage</a></h3>
     </div>
     </br>
     </fieldset>
