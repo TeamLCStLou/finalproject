@@ -103,7 +103,6 @@
         <div id="dash-right-content">
             <?php require("../public/links.php"); ?>
             <?php require("../public/reddit.php"); ?>
-            <div class="circle">
             </div>
         </div>         
     </div>      

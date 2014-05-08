@@ -5,6 +5,20 @@
         height:100%;
         min-height:500px;
     }
+    
+    div.icon
+    {
+        height:40px;
+        width:40px;
+        margin:auto auto auto auto;
+    
+    }
+    
+    img.prog-rate
+    {
+        height:100%;
+        width:100%;
+    }
 
 </style>
 
@@ -16,23 +30,23 @@
         <tr style="background-color:#8A0000;">
             <td> <b> pset </b></td>
             <td> <b> <a href="http://d2o9nyf4hwsci4.cloudfront.net/2014/x/psets/0/pset0/pset0.html"> 0 </a></b></td>
-            <td> <b> <a href="http://d2o9nyf4hwsci4.cloudfront.net/2014/x/psets/1/pset1/pset1.html"> 1 </b></td>
-            <td> <b> 2 </b></td>
-            <td> <b> 3 </b></td>
-            <td> <b> 4 </b></td>
-            <td> <b> 5 </b></td>
-            <td> <b> 6 </b></td>
-            <td> <b> 7 </b></td>
-            <td> <b> 8 </b></td>
-            <td> <b> Final </b></td>
+            <td> <b> <a href="http://d2o9nyf4hwsci4.cloudfront.net/2014/x/psets/1/pset1/pset1.html"> 1 </a></b></td>
+            <td> <b><a href="http://d2o9nyf4hwsci4.cloudfront.net/2014/x/psets/2/pset2/pset2.html"> 2 </a></b></td>
+            <td> <b><a href="http://d2o9nyf4hwsci4.cloudfront.net/2014/x/psets/3/pset3/pset3.html"> 3 </a></b></td>
+            <td> <b><a href="http://d2o9nyf4hwsci4.cloudfront.net/2014/x/psets/4/pset4/pset4.html"> 4 </a></b></td>
+            <td> <b><a href="http://d2o9nyf4hwsci4.cloudfront.net/2014/x/psets/5/pset5/pset5.html"> 5 </a></b></td>
+            <td> <b><a href="http://d2o9nyf4hwsci4.cloudfront.net/2014/x/psets/6/pset6/pset6.html"> 6 </a></b></td>
+            <td> <b><a href="http://d2o9nyf4hwsci4.cloudfront.net/2014/x/psets/7/pset7/pset7.html"> 7 </a></b></td>
+            <td> <b><a href="http://d2o9nyf4hwsci4.cloudfront.net/2014/x/psets/8/pset8/pset8.html"> 8 </a></b></td>
+            <td> <b><a href="http://d2o9nyf4hwsci4.cloudfront.net/2014/x/project/project.html"> Final </a></b></td>
         </tr>
         <tr style="background-color:#8A0000;">
-            <td> <b> X </b></td>
-            <td> <b> X </b></td>
-            <td> <b> X </b></td>
-            <td> <b> - </b></td>
-            <td> <b> - </b></td>
-            <td> <b> - </b></td>
+            <td> <b> status </b></td>
+            <td> <b> <div id="circle" class="icon"><img class="prog-rate" src="../images/icons/done-green.svg"/></div></b></td>
+            <td> <b> <div id="circle" class="icon"><img class="prog-rate" src="../images/icons/happy_times-pink.svg"/></div></b></td>
+            <td> <b> <div id="circle" class="icon"><img class="prog-rate" src="../images/icons/happy_times-pink.svg"/></div></b></td>
+            <td> <b> <div id="circle" class="icon"><img class="prog-rate" src="../images/icons/hot-pink.svg"/></div></b></td>
+            <td> <b> <div id="circle" class="icon"><img class="prog-rate" src="../images/icons/not-started.svg"/></div></b></td>
             <td> <b> - </b></td>
             <td> <b> - </b></td>
             <td> <b> - </b></td>
