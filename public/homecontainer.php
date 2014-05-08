@@ -80,7 +80,8 @@
 <div id="dash-container">
     <div id="dash-header">
         <div id="image-header">
-           <img alt="MyLaunchcode.com" src="http://launchcodestl.com/assets/logo-white-eaaa6c175ca5f34175c60ca6ed9b1e60.png" style="max-height:40%;"/>                
+           <img alt="MyLaunchcode.com" src="http://launchcodestl.com/assets/logo-white-eaaa6c175ca5f34175c60ca6ed9b1e60.png" style="max-height:40%;"/>    
+           <a href="logout.php">Log Out</a>            
         </div>
         <div>
 <!--            <img alt="MyLaunchcode.com" src="../images/MyLClogo.png" style="height:auto;width:auto;max-height:98%;"/>        
