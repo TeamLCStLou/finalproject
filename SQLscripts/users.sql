@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 23, 2014 at 09:15 PM
+-- Generation Time: May 08, 2014 at 11:05 PM
 -- Server version: 5.5.32-MariaDB
 -- PHP Version: 5.5.3
 
@@ -44,19 +44,17 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=22 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `usertype`, `FName`, `LName`, `Email`, `Phone`, `Lecture_Loc`, `City_Loc`, `Group_Name`, `ProgExp`, `created_on`) VALUES
-(1, 'ssmith', '12345', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2014-03-29 05:12:38.000000'),
-(2, 'Erik', '12345', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2014-03-29 05:34:10.000000'),
-(3, 'Erin', '12345', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2014-03-29 05:34:10.000000'),
-(4, 'Steve', '12345', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2014-03-29 05:34:27.000000'),
-(5, 'steve', '$1$FYeiyNQW$Kg39We5X1Mrv6li6S88lk/', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2014-04-15 00:46:45.346603'),
-(7, 'steve_bad', '$1$GeptmpJy$hA/.T8jISD3rbAUVa3Mkb0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2014-04-15 03:40:56.666112');
+(17, 'steve', '$1$7NA6AQA8$prDUyozv9eLoOp0o5lRsq/', NULL, 'Stephen', 'Smith', 'stephensmith378@gmail.com', '3148848061', 'Central Library', 'Downtown', 'matchCode', 'Novice', '2014-05-08 00:27:09.742330'),
+(18, 'erin', '$1$o8uQ1eQc$C2DzN9b7HTrnTgoeQxJJ41', NULL, 'Erin', 'Smith', 'coogal@biggmail.com', '3148675309', 'Soldier''s Memorial', 'Downtown', 'matchCode', 'Advanced', '2014-05-08 00:27:35.465181'),
+(20, 'erik', '$1$gm3K50aJ$WMgGZx./LRWchuECQ.D9j.', NULL, 'Erik', 'Schwenke', 'heyyo@youhoo.com', '3146492598', 'Central Library', 'Downtown', 'matchCode', 'Novice', '2014-05-08 02:24:29.099358'),
+(21, 'ken', '$1$sVXAL0nQ$y/gY3KX8xjMfkx6rZCTmJ.', NULL, 'Ken', 'Harris', 'ae@rew.com', '1113332222', 'Soldier''s Memorial', 'Downtown', NULL, 'Novice', '2014-05-08 02:29:35.002819');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

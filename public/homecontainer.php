@@ -1,74 +1,110 @@
-<!--<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+<!--
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
 -->
 <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
-
 <style>
+    div#dash-header
+    {
+        width:100%;
+        height:75px;
+        background-color: #0F2E4C;
+        Opacity:0.9;
+    }
 
+    div#image-header
+    {
 
-#header
-{
-    width:100%;
-    height:75px;
-//    background-image: url("../images/bckgnd.png");
-//    background-repeat: repeat-x;
-    background-color: #0F2E4C;
-    Opacity:0.9;
-//    border-width:1px;
-//    border-style:solid;
-}
+        position:relative;
+        float:right;
+        margin: 0px 10px 0px 0px;
+//        align-self:center;
+    }
+    div#dash-container
+    {
+        min-height: 100%;
+        height: 800px;
+        width:90%;
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 30px;
+    }
 
-#footer
-{
-    width:100%;
-    height:75px;
-    background-image: url("../images/bckgnd.png");
-    background-repeat: repeat-x;
-    border-width:1px;
-    border-style:solid;
+    div#dash-content
+    {
+        min-height: 100%;
+        height:100%;
+        width:100%;
+    }
+
+    div#dash-left-content
+    {
+        background-image: url("http://upload.wikimedia.org/wikipedia/commons/d/de/St_Louis_night_expblend.jpg");
+    //    background-image: url("http://elitemarketingevents.com/elitewp/wp-content/uploads/2013/08/City-of-St-Louis-skyline.jpg");
+        background-repeat: no-repeat;
+        background-size:cover;
+        min-height: 100%;
+        height:100%;
+        width:75%;
+        float:left;
+        background-color:red;        
+        padding-bottom: 15px;
+    //    Opacity:0.2;
+    }
+
+    div#dash-right-content
+    {
+//        min-height: 100%;
+        height:100%;
+        width:25%;
+        float:right;
+        background-color:#2C426E;
+        padding-bottom: 15px;
+    }
+
+    b, p
+    {
+    //    font-family: 'PT Sans Narrow', 'sans-serif';
+        font-family: 'Oswald', sans-serif;
+        color: white;
+    }   
     
-}
-
-#left-content
-{
-    background-image: url("http://upload.wikimedia.org/wikipedia/commons/d/de/St_Louis_night_expblend.jpg");
-//    background-image: url("http://elitemarketingevents.com/elitewp/wp-content/uploads/2013/08/City-of-St-Louis-skyline.jpg");
-    background-repeat: no-repeat;
-    background-size:cover;
-//    Opacity:0.2;
-}
-b, p
-{
-//    font-family: 'PT Sans Narrow', 'sans-serif';
-    font-family: 'Oswald', sans-serif;
-    color: white;
-}    
+    .circle
+    {
+        background-color:red;
+	    border-radius: 50%;
+	    width: 100px;
+	    height: 100px;  
+	}
 </style>
 
+<div id="dash-container">
+    <div id="dash-header">
+        <div id="image-header">
+           <img alt="MyLaunchcode.com" src="http://launchcodestl.com/assets/logo-white-eaaa6c175ca5f34175c60ca6ed9b1e60.png" style="max-height:40%;"/>    
+           <a href="logout.php">Log Out</a>            
+        </div>
+        <div>
+<!--            <img alt="MyLaunchcode.com" src="../images/MyLClogo.png" style="height:auto;width:auto;max-height:98%;"/>        
+-->
+            <?php require("../public/logo.php"); ?>
 
-<div id="container" style="width:90%;">
-    <div id="header">
-        <div style="width:50%;float:left;align-self:center;">
-           <img class="imgcenter" alt="MyLaunchcode.com" src="http://launchcodestl.com/assets/logo-white-eaaa6c175ca5f34175c60ca6ed9b1e60.png" style="position:relative;height:auto;width:auto;max-height:70%;"/>                
         </div>
-        <div style="width:50%;float:right;align-self:center;">
-            <img class="imgcenter" alt="MyLaunchcode.com" src="../images/MyLClogo.png" style="height:auto;width:auto;max-height:98%;"/>        
-        </div>
-        <div style="clear:both"></div>
+
     </div>
     
-    <div id="content" style="width:100%">
-        <div id="left-content" style="height:800px;width:75%;float:left;background-color:red;" >
+    <div id="dash-content">
+        <div id="dash-left-content">
             <div>
-                <?php require("../public/profileDetails.php"); ?>
-                
+                <?php require("../public/profileDetails.php"); ?>                
                 <?php require("../public/course_progress.php"); ?>
+
             </div>
-        <div id="right-content" style="height:800px;width:25%;float:right;background-color:#2C426E;">
+        </div>    
+        <div id="dash-right-content">
             <?php require("../public/links.php"); ?>
-        </div>
-               
-    </div>  
-
-    
+            <?php require("../public/reddit.php"); ?>
+            </div>
+        </div>         
+    </div>      
 </div>
-
+ 
