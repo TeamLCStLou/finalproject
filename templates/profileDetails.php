@@ -60,7 +60,7 @@
                     <img class="profile" src="http://static2.businessinsider.com/image/4f3433986bb3f7b67a00003c/a-parasite-found-in-cats-could-be-manipulating-our-brains.jpg"/>
             </td>
             <td class="profile">
-                <p class="profile-name"><b><?= $FName ." " . $LName ;?> </b></p>
+                <p class="profile-name"><b><?= $FName ." " . $LName . " (" . $username . ")" ;?> </b></p>
                 <p>
                 <b>Email:</b> <?= $Email ;?> <br/>        
                 <b>Phone:</b> <?= $Phone ;?> <br/>        

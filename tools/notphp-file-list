@@ -1,3 +1,4 @@
 vhosts/finalproject/public/*.html
 vhosts/finalproject/public/css/*
 vhosts/finalproject/public/images/*
+vhosts/finalproject/public/images/icons/*

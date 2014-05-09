@@ -35,10 +35,10 @@ table.links
 
 td.links
 {
-    background-color:#FFFFFF;
-//    border-color:#FFFFFF;
-//    cellspacing:0px;
-//    cellpadding:0px;
+    background-color:#5C748D;
+    border-color:#5C748D;
+    cellspacing:0px;
+    cellpadding:0px;
     border-width:0px;
 }
     

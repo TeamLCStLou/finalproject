@@ -42,16 +42,46 @@
         </tr>
         <tr style="background-color:#8A0000;">
             <td> <b> status </b></td>
-            <td> <b> <div id="circle" class="icon"><img class="prog-rate" src="../images/icons/done-green.svg"/></div></b></td>
-            <td> <b> <div id="circle" class="icon"><img class="prog-rate" src="../images/icons/happy_times-pink.svg"/></div></b></td>
+            <?php 
+                $array_int = 0;
+                for ($i = 0; $i <10 ; $i++)
+                {                
+                    $status_item = $prog_stat_result[$array_int];
+                    if($status_item["pset"] !== $i)
+                    {
+            ?>        
+                        <td> <b> <div id="circle" class="icon">
+                            <img class="prog-rate" src="./images/icons/not-started.svg" title="Not Started" alt="Not Started"/>
+                        </div></b></td>
+
+            <?php
+                    }
+                    else
+                    {
+             ?>
+                        <td> <b> <div id="circle" class="icon">
+                            <img class="prog-rate" src="<?= $status_item["img_link"]; ?>" title="<?= $status_item["status"]; ?>" alt="<?= $status_item["status"]; ?>"/>
+                        </div></b></td>                    
+
+             <?php
+                        if($array_int + 1 < count($prog_stat_result))
+                        {    
+                            $array_int++;
+                        }
+                    }
+                }                
+            ?>
+
+<!--            <td> <b> <div id="circle" class="icon"><img class="prog-rate" src="../images/icons/happy_times-pink.svg"/></div></b></td>
             <td> <b> <div id="circle" class="icon"><img class="prog-rate" src="../images/icons/happy_times-pink.svg"/></div></b></td>
             <td> <b> <div id="circle" class="icon"><img class="prog-rate" src="../images/icons/hot-pink.svg"/></div></b></td>
+            <td> <b> <div id="circle" class="icon"><img class="prog-rate" src="../images/icons/help-pink.svg"/></div></b></td>
             <td> <b> <div id="circle" class="icon"><img class="prog-rate" src="../images/icons/not-started.svg"/></div></b></td>
-            <td> <b> - </b></td>
-            <td> <b> - </b></td>
-            <td> <b> - </b></td>
-            <td> <b> - </b></td>
-            <td> <b> - </b></td>
+            <td> <b> <div id="circle" class="icon"><img class="prog-rate" src="../images/icons/not-started.svg"/></div></b></td>
+            <td> <b> <div id="circle" class="icon"><img class="prog-rate" src="../images/icons/not-started.svg"/></div></b></td>
+            <td> <b> <div id="circle" class="icon"><img class="prog-rate" src="../images/icons/not-started.svg"/></div></b></td>
+            <td> <b> <div id="circle" class="icon"><img class="prog-rate" src="../images/icons/not-started.svg"/></div></b></td>
+-->
         </tr>
         <tr style="background-color:#8A0000;">
             <td> <b>  </b></td>
