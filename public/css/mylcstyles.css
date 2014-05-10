@@ -55,6 +55,14 @@ IMG.imgcenter
     height: auto;
     border: 5px solid rgba(200,0,0,1.0);
  }
+   td.profilelabel
+ {
+    font: Helvetica;
+    font-size: 1.5vw;
+    color: red;
+    max-width: 100%;
+    height: auto;
+  }
  
  h2
  {
@@ -83,6 +91,15 @@ IMG.imgcenter
     text-align: center;
     font-family: 'Inconsolata', Arial, serif; font-weight: 400;
     font-size: 1.2vw;
+    color: black;
+    max-width: 100%;
+    height: auto;
+ }
+  h5
+ {
+    text-align: center;
+    font-family: 'Inconsolata', Arial, serif; font-weight: 400;
+    font-size: 2.0vw;
     color: black;
     max-width: 100%;
     height: auto;
