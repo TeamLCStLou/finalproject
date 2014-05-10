@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 08, 2014 at 11:06 PM
+-- Generation Time: May 09, 2014 at 11:48 PM
 -- Server version: 5.5.32-MariaDB
 -- PHP Version: 5.5.3
 
@@ -46,7 +46,7 @@ INSERT INTO `prog_status` (`id`, `status_code`, `status`, `order`, `img_link`) V
 (1, 'NS', 'Not Started', 0, '../images/icons/not-started.svg'),
 (2, 'COOL', 'I''m Cool', 5, '../images/icons/hot-pink.svg'),
 (3, 'DONE', 'Done', 99, '../images/icons/done-green.svg'),
-(4, 'SH', 'Send Help', 10, './images/icons/sendHelp.svg'),
+(4, 'SH', 'Send Help', 10, './images/icons/help-pink.svg'),
 (5, 'DG', 'Doing Good', 50, '../images/icons/happy_times-pink.svg'),
 (6, 'CRAY', 'Gone a bit mad', 75, '../images/icons/AbitNuts-pink.svg'),
 (7, 'EXP', 'Just experimenting', 60, '../images/icons/experimenting-pink.svg');
