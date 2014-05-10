@@ -5,13 +5,28 @@
 require("../includes/MyLCfunctions.php");
 require("../includes/datalogin.php");
 
-foreach ($_POST["Locations"] as $value):
-print $value;
+
+foreach ($_POST["Locations"] as $loc):
+
+
+$user = query("SELECT * FROM `users` WHERE City_Loc = '$loc'");
+extract ($user);
+foreach ($user as $ID):
+print $ID['username'];
+endforeach;
+
 endforeach;
 
 
-print_r ($_POST["ProgExp"]);
-print_r ($_POST["Availability"]);
+
+
+foreach ($_POST["ProgExp"] as $exp):
+print $exp;
+endforeach;
+
+foreach ($_POST["Availability"] as $avail):
+print $avail;
+endforeach;
 
 ?>
 
