@@ -28,8 +28,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $result = query("SELECT * FROM `users` WHERE username = '$username'");
         $row = $result[0];
         
-        print crypt($password);
-        print $row["password"];
+        //print crypt($password);
+        //print $row["password"];
         
         if (crypt($_POST["password"], $row["password"]) == $row["password"])
             {
@@ -39,8 +39,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             }
             else
             {
-                apologize("Wrong username or password! Please try again.");
-              
+                apologize("Wrong username or password! Username and password are case sensitive! Please try again.");
+                
             }
 }
         
