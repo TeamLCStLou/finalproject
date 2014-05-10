@@ -11,8 +11,10 @@
     </head>
     <body>
     
-    <?php 
-        
+    <?php
+     
+        require("../includes/datalogin.php");
+        require("../includes/MyLCconfig.php");        
         
         require($_GET["name"] . ".php"); 
     

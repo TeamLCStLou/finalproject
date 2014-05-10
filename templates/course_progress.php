@@ -16,8 +16,10 @@
     
     img.prog-rate
     {
-        height:100%;
-        width:100%;
+//        max-width:100%; 
+        max-height:100%;
+//        width:100%;
+//        height:100%;
     }
 
 </style>
@@ -72,16 +74,6 @@
                 }                
             ?>
 
-<!--            <td> <b> <div id="circle" class="icon"><img class="prog-rate" src="../images/icons/happy_times-pink.svg"/></div></b></td>
-            <td> <b> <div id="circle" class="icon"><img class="prog-rate" src="../images/icons/happy_times-pink.svg"/></div></b></td>
-            <td> <b> <div id="circle" class="icon"><img class="prog-rate" src="../images/icons/hot-pink.svg"/></div></b></td>
-            <td> <b> <div id="circle" class="icon"><img class="prog-rate" src="../images/icons/help-pink.svg"/></div></b></td>
-            <td> <b> <div id="circle" class="icon"><img class="prog-rate" src="../images/icons/not-started.svg"/></div></b></td>
-            <td> <b> <div id="circle" class="icon"><img class="prog-rate" src="../images/icons/not-started.svg"/></div></b></td>
-            <td> <b> <div id="circle" class="icon"><img class="prog-rate" src="../images/icons/not-started.svg"/></div></b></td>
-            <td> <b> <div id="circle" class="icon"><img class="prog-rate" src="../images/icons/not-started.svg"/></div></b></td>
-            <td> <b> <div id="circle" class="icon"><img class="prog-rate" src="../images/icons/not-started.svg"/></div></b></td>
--->
         </tr>
         <tr style="background-color:#8A0000;">
             <td> <b>  </b></td>
