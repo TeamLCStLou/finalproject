@@ -7,7 +7,7 @@
     {
         width:100%;
         height:75px;
-        background-color: #0F2E4C;
+        background-color: PURPLE;
         Opacity:0.9;
     }
 
