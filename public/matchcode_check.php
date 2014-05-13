@@ -5,29 +5,73 @@
 require("../includes/MyLCfunctions.php");
 require("../includes/datalogin.php");
 
+if (empty($_POST["Locations"]))
+{
+    
+}
 
-foreach ($_POST["Locations"] as $loc):
+else
+{
+    foreach ($_POST["Locations"] as $loc):
+
+    $user_loc = query("SELECT * FROM `users` WHERE City_Loc = '$loc'");
+    extract ($user_loc);
+        
+        foreach ($user_loc as $ID_loc):
+        print $ID_loc['username'];
+        endforeach;
+
+    endforeach;
+}
+
+if (empty($_POST["ProgExp"]))
+{
+    
+}
+
+else
+{
+    foreach ($_POST["ProgExp"] as $exp):
+    $user_exp = query("SELECT * FROM `users` WHERE ProgExp = '$exp'");
+    extract ($user_exp);
+        
+        foreach ($user_exp as $ID_exp):
+        print $ID_exp['username'];
+        endforeach;
+
+    endforeach;
+}
+
+if (empty($_POST["Availability"]))
+{
+    
+}
+
+else
+{
+    foreach ($_POST["Availability"] as $avail):
+    $user_avail = query("SELECT * FROM `user_availability` WHERE Availability = '$avail'");
+    extract ($user_avail);
+        
+        foreach ($user_avail as $ID_avail):
+        $ID_avail2 = $ID_avail['user_id'];
+        $ID_avail3 = query("SELECT * FROM `users` WHERE id = '$ID_avail2'");
+        extract ($ID_avail3);
+            
+            foreach ($ID_avail3 as $ID_avail4):
+            print $ID_avail4['username'];
+            endforeach;
+    
+        endforeach;
+    
+    endforeach;
+}
 
 
-$user = query("SELECT * FROM `users` WHERE City_Loc = '$loc'");
-extract ($user);
-foreach ($user as $ID):
-print $ID['username'];
-endforeach;
-
-endforeach;
-
-
-
-
-foreach ($_POST["ProgExp"] as $exp):
-print $exp;
-endforeach;
-
-foreach ($_POST["Availability"] as $avail):
-print $avail;
-endforeach;
-
+if ($ID_loc == $ID_exp && $ID_loc == $ID_avail4)
+{
+    print $ID_loc['username'];
+}
 ?>
 
 <!DOCTYPE html>
