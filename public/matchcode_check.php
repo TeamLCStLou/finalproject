@@ -12,6 +12,8 @@ if (empty($_POST["Locations"]))
 
 else
 {
+    $ID_loc = NULL;
+    
     foreach ($_POST["Locations"] as $loc):
 
     $user_loc = query("SELECT * FROM `users` WHERE City_Loc = '$loc'");
@@ -31,6 +33,8 @@ if (empty($_POST["ProgExp"]))
 
 else
 {
+    $ID_exp = NULL;
+    
     foreach ($_POST["ProgExp"] as $exp):
     $user_exp = query("SELECT * FROM `users` WHERE ProgExp = '$exp'");
     extract ($user_exp);
@@ -49,6 +53,8 @@ if (empty($_POST["Availability"]))
 
 else
 {
+    $ID_avail4 = NULL;
+    
     foreach ($_POST["Availability"] as $avail):
     $user_avail = query("SELECT * FROM `user_availability` WHERE Availability = '$avail'");
     extract ($user_avail);
