@@ -7,7 +7,7 @@ require("../includes/datalogin.php");
 
 if (empty($_POST["Locations"]))
 {
-    
+    $ID_loc == NULL;
 }
 
 else
@@ -26,7 +26,7 @@ else
 
 if (empty($_POST["ProgExp"]))
 {
-    
+    $ID_exp == NULL;
 }
 
 else
@@ -44,7 +44,7 @@ else
 
 if (empty($_POST["Availability"]))
 {
-    
+    $ID_avail4 == NULL;
 }
 
 else
