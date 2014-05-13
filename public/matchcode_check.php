@@ -78,7 +78,7 @@ if ($ID_loc == NULL && $ID_exp == NULL && $ID_avail4 == NULL)
     print "Sorry, your search returned no results.";
 }
 
-if ($ID_loc == $ID_exp && $ID_loc == $ID_avail4)
+else if ($ID_loc == $ID_exp && $ID_loc == $ID_avail4)
 {
     print $ID_loc['username'];
 }
