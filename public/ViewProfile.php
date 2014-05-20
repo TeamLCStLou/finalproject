@@ -15,6 +15,7 @@
     <table>
     <tr>
     <td><a href="mylchomepage.php">Home</a></td>
+    <td><a href="profileEditForm.php">Edit My Profile</a></td>
     <td>
     <div style="float:right; margin-right: auto;"><a href="logout.php">Log Out</a></div></td>
     </tr>
@@ -35,13 +36,13 @@
             </br>
             </br>
             <body>
-            <h5>View Profile:</h5>
+            <h5>View Profile: </h5>
             <table>
             <?php
             require("../includes/MyLCconfig.php");
          
             //$userid = $_GET['userid'];
-            $userid = 20;   // Temporary placeholder 
+            $userid = 22;   // Temporary placeholder 
             
             $result = query("SELECT * FROM users WHERE id = $userid");
          foreach($result as $row)
@@ -65,8 +66,12 @@
                    print("</tr>");
             ?>
             
-            </table>
-     
+             </table>
+             <P>
+             <P>
+              <?php require("../public/course_progress.php");
+     ?>
+    
     
     </body>
      </fieldset>
