@@ -83,8 +83,17 @@ span.timestamp
                 <td class="announcements"> <span class="timestamp">(posted: <?= $announcement_item["created_on"]?>)</span> <span class="message"><?= $announcement_item["message"]?> </span></td>
             </tr>
         <?php endforeach ?>
+        
+        <?php if($_SESSION["admin"] == 1): ?>
+            
+            <tr><td class="announcements"><a href="../public/add_announcement.php"> Add </a> | <a href="../public/update_announcements.php"> Update </a></td></tr>
+
+        <?php endif; ?>
+
         </div>
     </table>
+    
+    
 </div>
 <?php
      endif;

@@ -35,6 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             {
                 // store user's ID in session
                 $_SESSION["id"] = $row["id"];
+                $_SESSION["admin"] = $row["usertype"];
                 redirect("mylchomepage.php");
             }
             else
