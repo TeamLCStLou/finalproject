@@ -60,7 +60,10 @@
                     }
                     else
                     {
-             ?>
+//                    require("../public/prog_status_menu.php");
+            ?>
+
+                    
                         <td> <b> <div id="circle" class="icon">
                             <img class="prog-rate" src="<?= $status_item["img_link"]; ?>" title="<?= $status_item["status"]; ?>" alt="<?= $status_item["status"]; ?>"/>
                         </div></b></td>                    

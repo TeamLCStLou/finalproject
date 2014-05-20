@@ -101,8 +101,11 @@
             </div>
         </div>    
         <div id="dash-right-content">
+                            <?php require("../public/announcements.php"); ?>                
+
             <?php require("../public/links.php"); ?>
             <?php require("../public/reddit.php"); ?>
+            
             </div>
         </div>         
     </div>      

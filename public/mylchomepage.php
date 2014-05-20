@@ -5,6 +5,8 @@
 <html>
 
 <head>
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
     
 <link href= "../css/mylcstyles.css" rel= "stylesheet"/>
 

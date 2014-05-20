@@ -40,6 +40,7 @@ td.links
     cellspacing:0px;
     cellpadding:0px;
     border-width:0px;
+    
 }
     
 </style>
