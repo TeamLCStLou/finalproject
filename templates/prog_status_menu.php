@@ -55,11 +55,18 @@ div.prog-stat-txt
 
 .prog-stat-menubox:hover 
 { 
-    background-color: #2C426E;     
+    background-color: #2C426E;
+    color:white;     
+}
+
+div.prog-stat-contain
+{
+    position:relative;
 }
 
 </style>
 
+<div class="prog-stat-contain">
 <nav>
 <ul class="prog-stat">
     <?php foreach ($prog_stat_menu as $menu_item): ?>
@@ -78,4 +85,4 @@ div.prog-stat-txt
 <ul>
 
 </nav>
-
+</div>

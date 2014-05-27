@@ -1,7 +1,18 @@
+<?php
+    // setup page details
+    require("../includes/MyLCconfig.php");
+
+    // connect to the database  
+    require ("../includes/datalogin.php");
+
+?>
 <!--
     <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
 -->
+
+
 <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+
 <style>
     div#dash-header
     {
@@ -13,16 +24,17 @@
 
     div#image-header
     {
-
         position:relative;
         float:right;
         margin: 0px 10px 0px 0px;
 //        align-self:center;
     }
+
     div#dash-container
     {
         min-height: 100%;
-        height: 800px;
+//        height: 800px;
+        height: auto;
         width:90%;
         position: relative;
         overflow: hidden;
@@ -32,18 +44,20 @@
     div#dash-content
     {
         min-height: 100%;
-        height:100%;
+        height:auto;
         width:100%;
     }
 
     div#dash-left-content
     {
+        background-color:#2C426E;
         background-image: url("http://upload.wikimedia.org/wikipedia/commons/d/de/St_Louis_night_expblend.jpg");
     //    background-image: url("http://elitemarketingevents.com/elitewp/wp-content/uploads/2013/08/City-of-St-Louis-skyline.jpg");
         background-repeat: no-repeat;
         background-size:cover;
         min-height: 100%;
-        height:100%;
+        height: auto;
+//        height:100%;
         width:75%;
         float:left;
         background-color:red;        
@@ -53,8 +67,9 @@
 
     div#dash-right-content
     {
-//        min-height: 100%;
-        height:100%;
+        min-height: 100%;
+//        height:100%;
+        height: auto;
         width:25%;
         float:right;
         background-color:#2C426E;
@@ -101,8 +116,7 @@
             </div>
         </div>    
         <div id="dash-right-content">
-                            <?php require("../public/announcements.php"); ?>                
-
+            <?php require("../public/announcements.php"); ?>                
             <?php require("../public/links.php"); ?>
             <?php require("../public/reddit.php"); ?>
             
