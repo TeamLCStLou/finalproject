@@ -126,4 +126,77 @@ require_once("MyLCconstants.php");
         exit;
     }
 
+
+    function getProgStatusCode ($status_txt)
+    {
+        
+        print("Getting Status Code for '" . $status_txt ."'<br/>");
+        $status_code_results = query("SELECT `status_code` FROM `prog_status` WHERE `status` LIKE ?", $status_txt);
+
+        print_r($status_code_results);
+        print("<br/>" . count($status_code_results) . "<br/>");
+
+        if(empty($status_code_results) || count($status_code_results) > 1)
+        {
+            return false;
+        }
+        else
+        {
+            extract($status_code_results[0]);
+            print($status_code ."<br/>");
+            return $status_code;
+        }       
+    } 
+
+    /**
+    * Updates database with details on a user's
+    * progress for given pset
+    */
+    function updateProgStatus($pset, $status_txt)
+    {
+        $user_id = $_SESSION["id"];
+        
+        $status_code = getProgStatusCode($status_txt);
+
+        print("UID: " . $user_id . " STATUS_CODE:" . $status_code);
+/*        $query_txt = "INSERT INTO  `matchCode`.`user_prog_status` (
+                                            `user_id` ,
+                                            `pset` ,
+                                            `status_code` ,
+                                            `created_on`
+                                                               )
+                        VALUES ('$user_id',  '$pset',  '$status_code', CURRENT_TIMESTAMP)";
+*/
+//        $row_count = query($query_txt);
+                 
+        $row_count = query("SELECT count(`user_prog_status`.`user_id`) AS COUNT 
+                            FROM user_prog_status 
+                            WHERE `user_prog_status`.`user_id` = ? 
+                            AND `user_prog_status`.`pset` = ?",  $user_id, $status_code);
+       
+        if(empty($row_count))
+        {
+            query("INSERT INTO  `matchCode`.`user_prog_status` (
+                                            `user_id` ,
+                                            `pset` ,
+                                            `status_code` ,
+                                            `created_on`
+                                                               )
+                 VALUES (?,  ?,  ?, CURRENT_TIMESTAMP)", $user_id, $pset, $status_code);       
+            
+            print("INSERT " .   $user_id . "--" . $pset . "--" . $status_code);                
+        }
+        else if (count($row_count) == 1)
+        {
+            query("UPDATE  `matchCode`.`user_prog_status` 
+                   SET  `status_code` =  ?
+                   WHERE  `user_prog_status`.`user_id` = ? 
+                   AND `user_prog_status`.`pset`= ?", $status_code, $user_id, $pset);
+        print("UPDATE " .   $user_id . "--" . $pset . "--" . $status_code);                
+        } 
+        else
+        {
+            die("There was a database error. Please try again.");
+        }
+    }
 ?>

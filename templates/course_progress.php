@@ -31,7 +31,6 @@
         background-color:#CC3300;
         cursor: pointer;
     }
-
     
     img.prog-rate
     {
@@ -46,11 +45,12 @@
     {
         position:relative;    
     }
-
+ 
     div.hover-menu
     {
-          display:none;
-//        visibility:visable;
+//        position: relative;
+        display: inline-block; 
+        visibility:hidden;
 //        border-color: black;
 //        border-style: solid;
 //        border-width: 1px;
@@ -58,30 +58,64 @@
         top:100px;
         z-index:99;
     }
-
-    .onclick-select:before 
+ 
+    div.hover-menu:before
     {
         content: "";
     }
-    
-    .onclick-select:focus .hover-menu 
+
+    div.icon:focus div.prog-stat-contain
+    {
+        /* visible if menu is opened */
+        visibility: visible;
+    }    
+
+   .onclick-menu:hover
+    {
+        background-color:#CC3300;
+        cursor: pointer;
+    }   
+ 
+
+    .onclick-menu
+    {
+        position: relative;
+        display: inline-block;
+    }
+
+    .onclick-menu:before 
+    {
+//        content: "";
+    }
+    .onclick-menu:focus .onclick-menu-content 
     {
         display: block;
     }
+    .onclick-menu-content 
+    {
+        position: absolute;
+        z-index: 1;
+//        background-color:#CC3300;
+        background-color:#8A0000;
+
+
+        display: none;
+        list-style: none;
+    }    
 
 
 </style>
 
 <div class="course-progress">
-   <div tabindex="0" class="prog-row">
+   <div class="prog-row">
     <table class="prog-stat">
         <tr>
             <th style="background-color:#8A0000;text-align:left;width:30%;"colspan="11"> <b> Course Progress </b></th>
         </tr>
         <tr style="background-color:#8A0000;">
             <td> <b> pset </b></td>
-            <td> <b> <a href="http://d2o9nyf4hwsci4.cloudfront.net/2014/x/psets/0/pset0/pset0.html"> 0 </a></b></td>
-            <td> <b> <a href="http://d2o9nyf4hwsci4.cloudfront.net/2014/x/psets/1/pset1/pset1.html"> 1 </a></b></td>
+            <td> <b><a href="http://d2o9nyf4hwsci4.cloudfront.net/2014/x/psets/0/pset0/pset0.html"> 0 </a></b></td>
+            <td> <b><a href="http://d2o9nyf4hwsci4.cloudfront.net/2014/x/psets/1/pset1/pset1.html"> 1 </a></b></td>
             <td> <b><a href="http://d2o9nyf4hwsci4.cloudfront.net/2014/x/psets/2/pset2/pset2.html"> 2 </a></b></td>
             <td> <b><a href="http://d2o9nyf4hwsci4.cloudfront.net/2014/x/psets/3/pset3/pset3.html"> 3 </a></b></td>
             <td> <b><a href="http://d2o9nyf4hwsci4.cloudfront.net/2014/x/psets/4/pset4/pset4.html"> 4 </a></b></td>
@@ -94,47 +128,14 @@
         <tr style="background-color:#8A0000;">
             <td> <b> status </b></td>
             <?php 
-                $array_int = 0;
-                $menu_offset = 150;
-                $menu_shift = 105;
-                for ($i = 0; $i <10 ; $i++)
-                {                
+                  $array_int = 0;
+                  for ($i = 0; $i <10 ; $i++):
                     $status_item = $prog_stat_result[$array_int];
-                    if($status_item["pset"] !== $i)
-                    {
             ?>        
-                        <td> <b> 
-                            <div id="circle" class="icon">
-                                <img class="prog-rate" src="./images/icons/not-started.svg" title="Not Started" alt="Not Started"/>
-                            </div>
-                            </b></td>
-
-                        <div class="hover-menu" style="left:<?= ($menu_shift * $i) + $menu_offset;?>px;"> 
-
-                            <?php require("../public/prog_status_menu.php"); ?>
-                        </div>
-
-            <?php
-                    }
-                    else
-                    {
-            ?>
-
-                        <div class="hover-menu" style="left:<?= ($menu_shift * $i) + $menu_offset;?>px;">
-                            <?php  require("../public/prog_status_menu.php"); ?>
-                        </div>
-                        <td> <b> <div id="circle" class="icon">
-                            <img class="prog-rate" src="<?= $status_item["img_link"]; ?>" title="<?= $status_item["status"]; ?>" alt="<?= $status_item["status"]; ?>"/>
-                        </div></b></td>                    
-
-             <?php
-                        if($array_int + 1 < count($prog_stat_result))
-                        {    
-                            $array_int++;
-                        }
-                    }
-                }                
-            ?>
+                    <td> <b> 
+                         <?php require("../public/prog_status_menu.php"); ?>            
+                    </b></td>      
+            <?php endfor; ?>                                                                       
 
         </tr>
         <tr style="background-color:#8A0000;">
