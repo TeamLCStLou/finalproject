@@ -1,9 +1,9 @@
 <?php
 
-/** Useful 
+/** 
 *   
-*   helper functions 
-*
+*   Useful helper functions based on CS50 pset7 
+*   assignment code
 *   for Mylchomepage.php
 */
 
@@ -11,12 +11,6 @@
 require_once("MyLCconstants.php");
 
 // Functions
-
-    /**
-    *Logs user out of current session
-    */
-
- 
     
      /**
      * Redirects user to destination, which can be
@@ -130,52 +124,40 @@ require_once("MyLCconstants.php");
     function getProgStatusCode ($status_txt)
     {
         
-        print("Getting Status Code for '" . $status_txt ."'<br/>");
+        // query database and return rows from prog_status matching given status text
         $status_code_results = query("SELECT `status_code` FROM `prog_status` WHERE `status` LIKE ?", $status_txt);
 
-        print_r($status_code_results);
-        print("<br/>" . count($status_code_results) . "<br/>");
-
+        // if no results or more than one row returned there was an error
         if(empty($status_code_results) || count($status_code_results) > 1)
         {
             return false;
         }
         else
         {
+            // else, get the status code and return to calling function
             extract($status_code_results[0]);
-            print($status_code ."<br/>");
             return $status_code;
         }       
     } 
 
     /**
     * Updates database with details on a user's
-    * progress for given pset
+    * progress for given pset and user ID
     */
-    function updateProgStatus($pset, $status_txt)
+    function updateProgStatus($pset, $status_txt, $user_id)
     {
-        $user_id = $_SESSION["id"];
+        // convert the status text to a status code
         $status_code = getProgStatusCode($status_txt);
-
-        print("UID: " . $user_id . " STATUS_CODE:" . $status_code);
-/*        $query_txt = "INSERT INTO  `matchCode`.`user_prog_status` (
-                                            `user_id` ,
-                                            `pset` ,
-                                            `status_code` ,
-                                            `created_on`
-                                                               )
-                        VALUES ('$user_id',  '$pset',  '$status_code', CURRENT_TIMESTAMP)";
-*/
-//        $row_count = query($query_txt);
-                 
+        
+        // check if a status exist for user and pset
         $row_count = query("SELECT `user_prog_status`.`user_id` 
                             FROM user_prog_status 
                             WHERE `user_prog_status`.`user_id` = ? 
                             AND `user_prog_status`.`pset` = ?",  $user_id, $pset);
        
-        print_r($row_count);
         if(empty($row_count))
         {
+            // if no row for user and pset, add new row with status
             query("INSERT INTO  `matchCode`.`user_prog_status` (
                                             `user_id` ,
                                             `pset` ,
@@ -183,19 +165,21 @@ require_once("MyLCconstants.php");
                                             `created_on`
                                                                )
                  VALUES (?,  ?,  ?, CURRENT_TIMESTAMP)", $user_id, $pset, $status_code);       
-            
-            print("INSERT " .   $user_id . "--" . $pset . "--" . $status_code);                
         }
         else if (count($row_count) == 1)
         {
+            // if one row matches update that data
             if($status_code == 'NS')
             {
+                // if user is setting status to not started, remove
+                // row from database for user and pset
                  query("DELETE FROM `user_prog_status`
                         WHERE `user_prog_status`.`user_id` = ? 
                         AND `user_prog_status`.`pset`= ?", $user_id, $pset); 
             }
             else
             {
+                // else update the status for the user and pset to new value
                 query("UPDATE  `matchCode`.`user_prog_status` 
                        SET  `status_code` =  ?
                        WHERE  `user_prog_status`.`user_id` = ? 
@@ -205,6 +189,7 @@ require_once("MyLCconstants.php");
         } 
         else
         {
+            // if more than one row matches, there was an error.        
             die("There was a database error. Please try again.");
         }
     }
