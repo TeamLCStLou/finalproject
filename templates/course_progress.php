@@ -1,6 +1,4 @@
 <style>
-    
-    
     div.course-progress
     {
         padding-top:20px;
@@ -34,10 +32,7 @@
     
     img.prog-rate
     {
-//        max-width:100%; 
         max-height:100%;
-//        width:100%;
-//        height:100%;
     }
 
 
@@ -48,12 +43,8 @@
  
     div.hover-menu
     {
-//        position: relative;
         display: inline-block; 
         visibility:hidden;
-//        border-color: black;
-//        border-style: solid;
-//        border-width: 1px;
         position:absolute;
         top:100px;
         z-index:99;
@@ -69,6 +60,10 @@
         /* visible if menu is opened */
         visibility: visible;
     }    
+
+    /* some CSS logic for popup menu was guided
+     * by items from http://koen.kivits.com/articles/pure-css-menu/
+     */
 
    .onclick-menu:hover
     {
@@ -95,7 +90,6 @@
     {
         position: absolute;
         z-index: 1;
-//        background-color:#CC3300;
         background-color:#8A0000;
 
 

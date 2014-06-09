@@ -18,7 +18,6 @@
     border-top-color:white;
     border-top-width:thin;
     background-color:#8A0000;
-//    background-color: red;    
 }
 
 div.prog-stat-img
@@ -49,17 +48,17 @@ div.prog-stat-txt
     color:white;     
 }
 
-
 </style>
 
+
+<!-- display the current status for a pset.  If no status in DB, defaults to Not Started -->
 <div tabindex="0"  class="onclick-menu" style="width:40px;height:40px;">
     <?php if($status_item["pset"] !== $i): ?>     
         <img class="prog-rate" src="./images/icons/not-started.svg" title="Not Started" alt="Not Started"/>
     <?php else: ?>
         <img class="prog-rate" src="<?= $status_item["img_link"]; ?>" title="<?= $status_item["status"]; ?>" alt="<?= $status_item["status"]; ?>"/>
-
-
     <?php 
+        // if a match, go to the next item in the status array
         if($array_int + 1 < count($prog_stat_result)):
             $array_int++;
         endif;
@@ -67,13 +66,9 @@ div.prog-stat-txt
 
     <ul class="onclick-menu-content">
     <?php foreach ($prog_stat_menu as $menu_item): ?>
-<!--        <li><button onclick="alert('<?= $menu_item["status"] . "-" . $i; ?>')">
---> 
-       <li><button>
 
+       <li><button>
            <div class="prog-stat-table">
-<!--              <a onclick="SubmitProgStatus(<?= $menu_item["status_code"]; ?>, )"><div class="prog-stat-menubox" > 
--->
               <a href="<?= "./save_prog_status.php?PSET=" . $i . "&STATUS=" . $menu_item["status"] ?>"><div class="prog-stat-menubox" >
 
                  <div class="prog-stat-txt">
@@ -85,6 +80,7 @@ div.prog-stat-txt
               </a>
            </div>
         </button></li>
+
     <?php endforeach ?>            
     </ul>
 </div>

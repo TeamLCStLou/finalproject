@@ -110,13 +110,7 @@ require_once("MyLCconstants.php");
         }
     }
     
-    /**
-     * Renders template, passing in values.
-     */
-   
-
-    
-    
+  
       /**
      * Apologizes to user with message.
      */
@@ -126,6 +120,12 @@ require_once("MyLCconstants.php");
         exit;
     }
 
+      /**
+     * Returns a status code for a given
+     * status text.  If no match, false is 
+     * returned, otherwise a valid status code 
+     * is returned.
+     */
 
     function getProgStatusCode ($status_txt)
     {
@@ -155,7 +155,6 @@ require_once("MyLCconstants.php");
     function updateProgStatus($pset, $status_txt)
     {
         $user_id = $_SESSION["id"];
-        
         $status_code = getProgStatusCode($status_txt);
 
         print("UID: " . $user_id . " STATUS_CODE:" . $status_code);
@@ -169,11 +168,12 @@ require_once("MyLCconstants.php");
 */
 //        $row_count = query($query_txt);
                  
-        $row_count = query("SELECT count(`user_prog_status`.`user_id`) AS COUNT 
+        $row_count = query("SELECT `user_prog_status`.`user_id` 
                             FROM user_prog_status 
                             WHERE `user_prog_status`.`user_id` = ? 
-                            AND `user_prog_status`.`pset` = ?",  $user_id, $status_code);
+                            AND `user_prog_status`.`pset` = ?",  $user_id, $pset);
        
+        print_r($row_count);
         if(empty($row_count))
         {
             query("INSERT INTO  `matchCode`.`user_prog_status` (
@@ -188,11 +188,20 @@ require_once("MyLCconstants.php");
         }
         else if (count($row_count) == 1)
         {
-            query("UPDATE  `matchCode`.`user_prog_status` 
-                   SET  `status_code` =  ?
-                   WHERE  `user_prog_status`.`user_id` = ? 
-                   AND `user_prog_status`.`pset`= ?", $status_code, $user_id, $pset);
-        print("UPDATE " .   $user_id . "--" . $pset . "--" . $status_code);                
+            if($status_code == 'NS')
+            {
+                 query("DELETE FROM `user_prog_status`
+                        WHERE `user_prog_status`.`user_id` = ? 
+                        AND `user_prog_status`.`pset`= ?", $user_id, $pset); 
+            }
+            else
+            {
+                query("UPDATE  `matchCode`.`user_prog_status` 
+                       SET  `status_code` =  ?
+                       WHERE  `user_prog_status`.`user_id` = ? 
+                       AND `user_prog_status`.`pset`= ?", $status_code, $user_id, $pset);
+                print("UPDATE " .   $user_id . "--" . $pset . "--" . $status_code);                
+            }
         } 
         else
         {
